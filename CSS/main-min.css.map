@@ -1,1 +1,1 @@
-{"version":3,"sources":["../Sass/main.scss"],"names":[],"mappings":"AAAQ","file":"main-min.css","sourcesContent":["@import '../node_modules/bootstrap/dist/css/bootstrap.css';"]}
+{"version":3,"sources":["../Sass/main.scss","../Sass/_custom.scss"],"names":[],"mappings":"AASQ,yDAAA,CCRR,KACI,gBAAA,CACA,UAAA,CACA,SAAA,CACA,QAAA","file":"main-min.css","sourcesContent":["@use 'custom';\n\n\n\n\n\n\n\n\n@import '../node_modules/bootstrap/dist/css/bootstrap.css';","// BASIC SETTINGS \nbody {\n    min-height: 100vh;\n    width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n\n\n"]}

@@ -11,10 +11,95 @@
         <link rel="stylesheet" href="CSS/main-min.css">
         <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script src="Js/index.js"></script>
     </head>
 
     <body>
+
+        <div class="container-xl" id="drum-machine">
+
+            <h1 class="display-2"><del>Drum</del><ins> Moooooo </ins>Machine</h1>
+
+            <div class="row">
+                <!-- ILLUSTRATION -->
+                <div class="col-12 col-lg-6 border">
+                    <img src="images/farm.svg" alt="farm illustration" class="img-fluid">
+                </div>
+
+                <!-- DRUM MACHINE -->
+                <div class="col-12 col-lg-6 border">
+
+
+                    <!-- 9 DRUM PADS -->
+                    <div class="col-12 col-lg-9 border d-flex flex-column gap-2 p-2">
+
+                        <div class="col-12 d-flex justify-content-evenly">
+                            <button id="0" class="drum-pad col-3 text-center border">Q
+                                <audio src="" class="clip" id="Q"></audio>
+                            </button>
+                            <button id="1" class="drum-pad col-3 text-center border">W
+                                <audio src="" class="clip" id="W"></audio>
+                            </button>
+                            <button id="2" class="drum-pad col-3 text-center border">E
+                                <audio src="" class="clip" id="E"></audio>
+                            </button>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-evenly">
+                            <button id="3" class="drum-pad col-3 text-center border">A
+                                <audio src="" class="clip" id="A"></audio>
+                            </button>
+                            <button id="4" class="drum-pad col-3 text-center border">S
+                                <audio src="" class="clip" id="S"></audio>
+                            </button>
+                            <button id="5" class="drum-pad col-3 text-center border">D
+                                <audio src="" class="clip" id="D"></audio>
+                            </button>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-evenly">
+                            <button id="6" class="drum-pad col-3 text-center border">Z
+                                <audio src="" class="clip" id="Z"></audio>
+                            </button>
+                            <button id="7" class="drum-pad col-3 text-center border">X
+                                <audio src="" class="clip" id="X"></audio>
+                            </button>
+                            <button id="8" class="drum-pad col-3 text-center border">C
+                                <audio src="" class="clip" id="C"></audio>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- CONTROL AND PREVIEW PANEL -->
+                    <div class="col-12 col-lg-3 border d-flex flex-column gap-2">
+                    
+                        <h2 class="text-center">Record</h2>
+                        <div class="d-flex justify-content-evenly">
+                            <button id="rec" class="try">Rec</button>
+                            <button id="play">Play</button>
+                            <button id="pause">Pause</button>
+                            <button id="resume">Res</button>
+                            <button id="stop" class="try">Stop</button>
+                            <button id="del">Del</button>
+                        </div>
+                        <div id="display" class="border p-2 m-2 fs-4 text-center"></div>
+                        <ol id="list">
+                            
+                        </ol>
+                       
+                    </div>
+
+                </div>
+
+                <audio id="test">
+                    <source src="audios/bird/Dove.m4a">
+                </audio>
+
+            </div>
+        </div>
+
+        
+        <script src="Js/index.js" type="module"></script>
         
     </body>
     
