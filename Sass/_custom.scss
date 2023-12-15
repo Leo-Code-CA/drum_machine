@@ -6,5 +6,28 @@ body {
     margin: 0;
 }
 
+.bg--wild {
+    background-image: url('../images/wild.svg');
+    background-size: cover;
+    background-position: 50% 60%;
+}
 
+.bg--farm {
+    background-image: url('../images/farm2.svg');
+    background-size: cover;
+    background-position: 50% 30%;
+}
+
+.bg--wing {
+    background-image: url('../images/birds.jpg');
+    background-size: cover;
+}
+
+.svg {
+    width: 50%;
+
+    textpath {
+        font-size: 1.9rem;
+    }
+}
 

@@ -2,25 +2,83 @@ import { farmAnimals, flyingAnimals, wildAnimals } from './data.js';
 
 $(document).ready(function() {
 
+    
+    ///////////////////////////////////////////////////////////////////////////////////
+    // Welcome page content
+
+    let pickTheme;
+    let finalChoice;
+    
+
+    $('button.theme').on('click', handleChoice);
+    $('#confirm').on('click', handleConfirm);
+    
+
+    function handleChoice() {
+
+        pickTheme = $(this).attr('id');
+
+        if (pickTheme === 'farm') {
+            $('.welcome').removeClass(['bg--wild', 'bg--wing']);
+            $('.welcome').addClass('bg--farm');
+        } else if (pickTheme === 'wild') {
+            $('.welcome').removeClass(['bg--farm', 'bg--wing']);
+            $('.welcome').addClass('bg--wild');
+        } else if (pickTheme === 'wing') {
+            $('.welcome').removeClass(['bg--farm', 'bg--wild']);
+            $('.welcome').addClass('bg--wing');
+        }
+    }
+
+    function handleConfirm() {
+
+        let animals;
+        finalChoice = pickTheme;
+
+        if (finalChoice === 'farm') {
+            animals = farmAnimals;
+        } else if (finalChoice === 'wild') {
+            animals = wildAnimals;
+        } else if (finalChoice = 'wing') {
+            animals = flyingAnimals;
+        }
+
+        nextPage(animals);
+        
+        $('.welcome').addClass('d-none');
+        $('#drum-machine').removeClass('d-none');
+        console.log(animals);
+    } 
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+function nextPage(animals) {
+
     let sounds = [];
 
     // assign the sounds to the drum pads 
-    for (let i = 0; i < wildAnimals.length; i++) {
-        $(`audio:eq(${i})`).attr('src', wildAnimals[i].audio);
+    for (let i = 0; i < animals.length; i++) {
+        $(`audio:eq(${i})`).attr('src', animals[i].audio);
     }
 
     // make the click on the drum pads trigger the audio AND update the sound list 
     $("button[class|='drum']").click(function() {
         $(this).children()[0].play();
-        $('#display').html(wildAnimals[this.id].animal);
+        $('#display').html(animals[this.id].animal);
     });
 
     // make the corresponding key press trigger the audio AND update the sound list
     $(document).on('keydown', function(event) {
+        
 
         let currentKey = event.key;
 
-        $.map(wildAnimals, function(animal, i) {
+        console.log(currentKey)
+
+        $.map(animals, function(animal, i) {
+            console.log(animal.key);
+            console.log(animals);
              if (animal.key === currentKey.toLowerCase()) {
                 $(`button[class|='drum']:eq(${i})`).children()[0].play();
                 $('#display').html(animal.animal);
@@ -28,10 +86,10 @@ $(document).ready(function() {
         })
     })
 
-    // handle delete click to clear the list of sounds 
+    // handle delete click - clear the list of sounds 
     $("#del").click(function() {
         $('#list').children().remove();
-        $( "body" ).off( "click", "button[class|='drum']", handleClick);
+        $("button[class|='drum']").off( "click", handleClick);
         sounds = [];
     })
 
@@ -40,18 +98,19 @@ $(document).ready(function() {
 
     /////////////////////////////////////////
 
-
+    // when record is "ON", remember the sounds played by clicking and list them
     function handleClick() {
         sounds.push(this.id);
-        // console.log(sounds);
-        $('#list').append(`<li>${wildAnimals[this.id].animal}</li>`);
+        $('#list').append(`<li>${animals[this.id].animal}</li>`);
     }
 
+    
+    // when record is "ON", remember the sounds played by pressing a key and list them 
     function handleKeyDown(event) {
 
         let currentKey = event.key;
 
-        $.map(wildAnimals, function(animal) {
+        $.map(animals, function(animal) {
             if(animal.key === currentKey.toLowerCase()) {
                 sounds.push(animal.id);
                 $('#list').append(`<li>${animal.animal}</li>`)
@@ -59,44 +118,53 @@ $(document).ready(function() {
         })
     }
 
+    // turn record "ON" - the sounds list starts to be updated
     $('#rec').click(function() {
-        $("button[class|='drum']").on( "click", handleClick);
+        $("button[class|='drum']").on("click", handleClick);
         $(document).on('keydown', handleKeyDown);
     })
 
-
+    // turn record "OFF" - the sounds list is no more updated
     $('#stop').click(function() {
         $("button[class|='drum']").off( "click", handleClick);
         $(document).off('keydown', handleKeyDown)
     })
 
     
-
-
     ////////////////////////////////////////
+    let paused = 0;
+    let remainingSounds = [];
 
-    
-    
-
+    // replay the sounds saved in the list starting from the last one which was played when the paused button has been clicked
     async function handleResume() {
 
-        let id = $('.playing').parent().attr('id');
-        let index = sounds.indexOf(id);
+        // let id = $('.playing').parent().attr('id');
+        // let index = sounds.indexOf(id);
         
 
         let currentlyPlay = $('.playing')[0];
         currentlyPlay.play();
 
-        console.log('index is ' + index);
-        let remainingSounds = sounds.slice(index);
-        console.log('sounds is ' + sounds);
-        console.log('remaining is ' + remainingSounds);
+
+        if (remainingSounds.length === 0) {
+            remainingSounds = sounds.slice(paused);
+        } else {
+            remainingSounds = remainingSounds.slice(paused);
+        }
+
+        // console.log('index is ' + index);
+        // let remainingSounds = sounds.slice(paused);
+        
+        console.log('remaining sounds is: ' + remainingSounds);
 
 
             for (let i = 0; i < remainingSounds.length; i++) {
 
                 $(`button[class|='drum']:eq(${remainingSounds[i]})`).children()[0].play();
-                await addDelay(2000);
+                paused = i;
+                console.log(`paused is: ${paused}`)
+                let currentSoundDuration = Math.ceil($(`button[class|='drum']:eq(${remainingSounds[i]})`).children()[0].duration * 1000) + 100;
+                await addDelay(currentSoundDuration);
         
             }
         }
@@ -104,11 +172,17 @@ $(document).ready(function() {
     $('#resume').on('click', handleResume);
 
 
+    // delay between two replayed sounds to avoid them to play all at the same time
     function addDelay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+    
+
+    // replay the sounds saved in the list
     async function playSounds() {
+
+        console.log(`sounds is: ${sounds}`);
 
         $(`button[class|='drum']`).children().removeClass('paused');
 
@@ -119,8 +193,14 @@ $(document).ready(function() {
             while($(`button[class|='drum']:eq(${sounds[i]})`).children().hasClass('paused') === false) {
 
                 $(`button[class|='drum']:eq(${sounds[i]})`).children()[0].play();
-                console.log(`playing: ${$(`button[class|='drum']:eq(${sounds[i]})`).html()}`)
-                await addDelay(2000);
+                console.log(`playing: ${$(`button[class|='drum']:eq(${sounds[i]})`).children().attr('id')}`)
+                paused = i;
+                remainingSounds = [];
+                console.log(`paused is: ${paused}`);
+                // console.log($('#Q')[0].duration);
+                let currentSoundDuration = Math.ceil($(`button[class|='drum']:eq(${sounds[i]})`).children()[0].duration * 1000) + 100;
+                console.log(currentSoundDuration)
+                await addDelay(currentSoundDuration);
                 i++;
             
             }
@@ -136,19 +216,24 @@ $(document).ready(function() {
 
     $('#pause').on('click', function() {
 
-        let id = $('.playing').parent().attr('id');
-        let index = sounds.indexOf(id);
+        // let id = $('.playing').parent().attr('id');
+        // // let index = sounds.indexOf(id);
+        // let index = sounds.indexOf(id);
+        // console.log(`index of paused sound in sound array is: ${index} and sounds is: ${sounds}`)
         
 
         $('.playing')[0].pause();
 
-        // let id = $('.playing').parent().attr('id');
-        // console.log(id);
-        // let index = sounds.indexOf(id);
-        // console.log(index);
+        let soundsarr = [];
+
+        if (remainingSounds.length === 0) {
+            soundsarr = sounds;
+        } else {
+            soundsarr = remainingSounds;
+        }
    
 
-         for (let i = index; i < sounds.length; i++) {
+         for (let i = 0; i < soundsarr.length; i++) {
              $(`button[class|='drum']:eq(${sounds[i]})`).children().addClass('paused');
          }
 
@@ -158,23 +243,12 @@ $(document).ready(function() {
 
     
 
-    // console.log($(`button[class|='drum']:eq(0)`).children().attr('class'));
-
-
-    // $('audio').on('play', function() {
-    //     $(this).addClass('playing');
-    // })
 
     $('audio').on('playing', function() {
         $(this).removeClass('ended');
         $(this).addClass('playing');
-        // console.log($('.playing').parent().attr('id'));
     })
 
-    // $('audio').on('ended', function() {
-    //     $(this).removeClass('playing');
-    //     $(this).addClass('ended')
-    // })
 
     $('audio').on('ended', function() {
         $(this).addClass('ended');
@@ -182,47 +256,6 @@ $(document).ready(function() {
     })
 
 
-    //////////////////////////////////////////
-
-    
-
-    // async function playSounds() {
-    //     for (let i = 0; i < sounds.length; i++) {
-
-    //         let pause = false;
-
-    //         if ($(`button[class|='drum']:eq(${sounds[i]})`).children().hasClass('paused') === false) {
-
-    //             $(`button[class|='drum']:eq(${sounds[i]})`).children()[0].play();
-    //             await addDelay(2000);
-
-    //         } else {
-    //             $(`button[class|='drum']:eq(${sounds[i]})`).children()[0].pause();
-    //         }
-    //     }
-
-    // }
-
-
-
-
-    // $('#pause').on('click', function() {
-    //     let id = $('.playing').parent().attr('id');
-
-    //     console.log('parent id: ' + id);
-    //     console.log('sounds: ' + sounds)
-
-    //     let index = sounds.indexOf(id);
-    //     console.log('starting index: ' + index)
-
-    //     for (let i = index; i < sounds.length; i++) {
-    //         console.log('the i is: ' + i)
-    //         $(`button[class|='drum']:eq(${sounds[i]})`).children()[0].pause()
-    //         console.log('I pause the: ' + sounds[i]);
-    //     }
-    //     // $('.playing')[0].pause();
-        
-    // })
-
+}
     
 })
