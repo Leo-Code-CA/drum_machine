@@ -23,11 +23,52 @@ body {
     background-size: cover;
 }
 
-.svg {
-    width: 50%;
+// .svg {
+//     width: 50%;
 
-    textpath {
-        font-size: 1.9rem;
-    }
+//     textpath {
+//         font-size: 1.9rem;
+//     }
+// }
+
+.welcome__bg {
+    width: 40%;
+    aspect-ratio: 1.1/1;
+    border-radius: 100%;
 }
 
+.welcome__bg--wild {
+    background-color: rgba(0, 128, 0, 0.6);
+    background: linear-gradient(
+        0deg,
+        rgba(45,93,94, 0.9),
+        rgba(36,160,139, 0.9) 25%,
+        rgba(190,234,214, 0.9) 75%
+    );
+}
+
+.welcome__bg--farm {
+    background-color: rgba(237, 175, 60, 0.6);
+    background: linear-gradient(
+        30deg,
+        rgb(233, 145, 50, 0.95),
+        rgb(243, 174, 93, 0.95) 25%,
+        rgb(255, 224, 175, 0.95) 75%
+    );
+}
+
+.welcome__bg--wing {
+    background-color: rgba(51, 148, 208, 0.6);
+    background: linear-gradient(
+        180deg,
+        rgba(0,83,159, 0.9),
+        rgba(84,189,221, 0.9),
+        rgba(210,239,253, 0.9)
+    );
+}
+
+.welcome__title {
+    font-size: 1.8rem;
+    width: 75%;
+    height: 70%;
+}

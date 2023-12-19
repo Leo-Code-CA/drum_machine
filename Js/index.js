@@ -2,53 +2,89 @@ import { farmAnimals, flyingAnimals, wildAnimals } from './data.js';
 
 $(document).ready(function() {
 
+    function applyTheme(theme) {
+        return {
+            mainBG: `bg--${theme} row vh-100 welcome`,
+            secondaryBG: `welcome__bg--${theme} welcome__bg position-absolute start-50 top-50 translate-middle d-flex flex-column justify-content-evenly align-items-center z-1`,
+            themeBTN: `welcome__themebtn--${theme} btn theme welcome__themebtn`,
+            choiceBTM: `welcome__choicebtn--${theme} btn welcome__choicebtn`
+
+        }
+    }
+
+    $('#welcome').removeClass(function(i, old) {
+        console.log('i remove' + old)
+        return old;
+    });
+    $('#welcome').addClass(applyTheme('wild').mainBG)
+
+    $('#welcomebg').removeClass(function(i, old) {
+        console.log('i remove' + old)
+        return old;
+    });
+    $('#welcomebg').addClass(applyTheme('wild').mainBG)
+    
+
+    farm wild wing 
+
+    confirm
+
+    /// LOOP OR MAP OR WHATEVER BUT FIND SOMETHING BETTER BECAUSE THIS LOOKS BAD :( GOOD LUCK!
+    
+
     
     ///////////////////////////////////////////////////////////////////////////////////
     // Welcome page content
 
-    let pickTheme;
-    let finalChoice;
+    // let pickTheme;
+    // let finalChoice;
     
 
-    $('button.theme').on('click', handleChoice);
-    $('#confirm').on('click', handleConfirm);
+    // $('button.theme').on('click', handleChoice);
+    // $('#confirm').on('click', handleConfirm);
     
 
-    function handleChoice() {
+    // function handleChoice() {
 
-        pickTheme = $(this).attr('id');
+    //     pickTheme = $(this).attr('id');
 
-        if (pickTheme === 'farm') {
-            $('.welcome').removeClass(['bg--wild', 'bg--wing']);
-            $('.welcome').addClass('bg--farm');
-        } else if (pickTheme === 'wild') {
-            $('.welcome').removeClass(['bg--farm', 'bg--wing']);
-            $('.welcome').addClass('bg--wild');
-        } else if (pickTheme === 'wing') {
-            $('.welcome').removeClass(['bg--farm', 'bg--wild']);
-            $('.welcome').addClass('bg--wing');
-        }
-    }
+    //     if (pickTheme === 'farm') {
+    //         $('.welcome').removeClass(['bg--wild', 'bg--wing']);
+    //         $('.welcome').addClass('bg--farm');
+    //         $('.welcome__bg').removeClass(['welcome__bg--wild', 'welcome__bg--wing']);
+    //         $('.welcome__bg').addClass('welcome__bg--farm');
+    //     } else if (pickTheme === 'wild') {
+    //         $('.welcome').removeClass(['bg--farm', 'bg--wing']);
+    //         $('.welcome').addClass('bg--wild');
+    //         $('.welcome__bg').removeClass(['welcome__bg--farm', 'welcome__bg--wing']);
+    //         $('.welcome__bg').addClass('welcome__bg--wild');
+    //     } else if (pickTheme === 'wing') {
+    //         $('.welcome').removeClass(['bg--farm', 'bg--wild']);
+    //         $('.welcome').addClass('bg--wing');
+    //         $('.welcome__bg').removeClass(['welcome__bg--wild', 'welcome__bg--farm']);
+    //         $('.welcome__bg').addClass('welcome__bg--wing');
+    //     }
+    // }
 
-    function handleConfirm() {
+    // function handleConfirm() {
 
-        let animals;
-        finalChoice = pickTheme;
+    //     let animals;
+    //     finalChoice = pickTheme;
 
-        if (finalChoice === 'farm') {
-            animals = farmAnimals;
-        } else if (finalChoice === 'wild') {
-            animals = wildAnimals;
-        } else if (finalChoice = 'wing') {
-            animals = flyingAnimals;
-        }
+    //     if (finalChoice === 'farm') {
+    //         animals = farmAnimals;
+    //     } else if (finalChoice === 'wild') {
+    //         animals = wildAnimals;
+    //     } else if (finalChoice = 'wing') {
+    //         animals = flyingAnimals;
+    //     }
 
-        nextPage(animals);
+    //     nextPage(animals);
         
-        $('.welcome').addClass('d-none');
-        $('#drum-machine').removeClass('d-none');
-        console.log(animals);
-    } 
+    //     $('.welcome').addClass('d-none');
+    //     $('#drum-machine').removeClass('d-none');
+    //     console.log(animals);
+    // } 
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
