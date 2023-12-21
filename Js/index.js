@@ -1,36 +1,87 @@
 import { farmAnimals, flyingAnimals, wildAnimals } from './data.js';
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    function applyTheme(theme) {
-        return {
-            mainBG: `bg--${theme} row vh-100 welcome`,
-            secondaryBG: `welcome__bg--${theme} welcome__bg position-absolute start-50 top-50 translate-middle d-flex flex-column justify-content-evenly align-items-center z-1`,
-            themeBTN: `welcome__themebtn--${theme} btn theme welcome__themebtn`,
-            choiceBTM: `welcome__choicebtn--${theme} btn welcome__choicebtn`
+//     function applyTheme(theme) {
+//         return {
+//             mainBG: `bg--${theme} row vh-100 welcome`,
+//             secondaryBG: `welcome__bg--${theme} welcome__bg position-absolute start-50 top-50 translate-middle d-flex flex-column justify-content-evenly align-items-center z-1`,
+//             themeBTN: `welcome__themebtn--${theme} btn theme welcome__themebtn`,
+//             choiceBTM: `welcome__choicebtn--${theme} btn welcome__choicebtn`
 
-        }
-    }
+//         }
+//     }
 
-    $('#welcome').removeClass(function(i, old) {
-        console.log('i remove' + old)
-        return old;
-    });
-    $('#welcome').addClass(applyTheme('wild').mainBG)
+//     $('#welcome').removeClass(function(i, old) {
+//         console.log('i remove' + old)
+//         return old;
+//     });
+//     $('#welcome').addClass(applyTheme('wild').mainBG)
 
-    $('#welcomebg').removeClass(function(i, old) {
-        console.log('i remove' + old)
-        return old;
-    });
-    $('#welcomebg').addClass(applyTheme('wild').mainBG)
+//     $('#welcomebg').removeClass(function(i, old) {
+//         console.log('i remove' + old)
+//         return old;
+//     });
+//     $('#welcomebg').addClass(applyTheme('wild').mainBG)
     
 
-    farm wild wing 
+//     farm wild wing 
 
-    confirm
+//     confirm
 
     /// LOOP OR MAP OR WHATEVER BUT FIND SOMETHING BETTER BECAUSE THIS LOOKS BAD :( GOOD LUCK!
+
+
+
+    function handleTheme(theme) {
+
+        $('.pick').text(`You picked ${theme}`)
+
+        const bgImg = $('#welcomeimg');
+        const bgColor = $('#welcomecolor');;
+        const btnChoice = $('#choicebtn button');;
+        const btnConfirm = $('#confirmbtn');;
+
+        const elements = [bgImg, bgColor, btnChoice, btnConfirm];
+
+        $.map(elements, function(element, i) {
+
+            element.removeClass(function(i, old) {
+
+                const classes = old.split(" ");
+                let remove = "";
+
+                classes.filter(function(name) {
+                    console.log(name.includes('--'));
+                    name.includes('--') && (remove += ` ${name}`);
+                })
+
+                console.log(remove)
+                return remove;
+            })
+
+            switch(i) {
+                case 0:
+                element.addClass(`welcome__bgImg--${theme}`);
+                break;
+                case 1:
+                element.addClass(`welcome__bgColor--${theme}`)
+                break;
+                case 2:
+                element.addClass(`welcome__choiceBtn--${theme}`);
+                break;
+                case 3:
+                element.addClass(`welcome__confirmBtn--${theme}`);
+                break;
+                default:
+                element.addClass(`welcome__default`);
+            }
+        })
+    }
     
+    $('#choicebtn button').on('click', function() {
+        handleTheme(this.id);
+    })
 
     
     ///////////////////////////////////////////////////////////////////////////////////
@@ -294,4 +345,4 @@ function nextPage(animals) {
 
 }
     
-})
+// })
