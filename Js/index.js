@@ -35,7 +35,8 @@ import { farmAnimals, flyingAnimals, wildAnimals } from './data.js';
 
     function handleTheme(theme) {
 
-        $('.pick').text(`You picked ${theme}`)
+        $('.pick').removeClass('d-none');
+        $('.pick').text(`You picked ${theme}`);
 
         const bgImg = $('#welcomeimg');
         const bgColor = $('#welcomecolor');;

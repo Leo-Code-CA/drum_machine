@@ -16,29 +16,29 @@
     <body>
 
         <div class="container-fluid">
-            <div class="row vh-100 border welcome welcome__bgImg" id="welcomeimg">
-                <div class="col-12">
-                    <div class="col-8 mx-auto position-relative h-100">
-                        <div id="welcomecolor" class="welcome__bg position-absolute start-50 top-50 translate-middle d-flex flex-column justify-content-evenly align-items-center z-1 p-3">
-                            <p class="w-50 text-center mb-0">Pick your favorite, don't ask yourself too many questions. Don't worry, you'll able to change later on.</p>
-                            <h3 class="pick"></h3>
+            <div class="row vh-100 welcome__bgImg" id="welcomeimg">
+                <!-- <div class="col-12 d-lg-flex align-items-center"> -->
+                    <div class="col-12 d-flex flex-column align-items-center mt-5 mt-lg-0 justify-content-lg-center">
+                        <div id="welcomecolor" class="welcome__bg d-flex flex-column justify-content-evenly align-items-center z-1 p-3 mt-3 mt-lg-0">
+                            <p class="w-50 text-center mb-0">Hi there! Pick your favorite please. Don't worry, you'll able to change later on.</p>
+                            <h3 class="pick d-none"></h3>
                             <div id="choicebtn">
-                                <button class="btn theme welcome__themebtn welcome__choiceBtn" id="farm">Farm</button>
-                                <button class="btn theme welcome__themebtn welcome__choiceBtn" id="wild">Wild</button>
-                                <button class="btn theme welcome__themebtn welcome__choiceBtn" id="wing">Wing</button>
+                                <button type="button" class="btn btn-outline-dark theme welcome__themebtn welcome__choiceBtn" id="farm">Farm</button>
+                                <button type="button" class="btn btn-outline-dark theme welcome__themebtn welcome__choiceBtn" id="wild">Wild</button>
+                                <button type="button" class="btn btn-outline-dark theme welcome__themebtn welcome__choiceBtn" id="wing">Wing</button>
                             </div>
                             <button class="btn welcome__choicebtn welcome__confirmBtn" id="confirmbtn">Confirm</button>
                         </div>
-                        <svg class="welcome__title position-absolute start-50 top-50 translate-middle" viewBox="0 0 500 500">
+                        <svg class="welcome__title" viewBox="50 -10 400 400">
                             <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent"/>
-                            <text width="500">
+                            <text width="450">
                                 <textPath alignment-baseline="top" xlink:href="#curve">
                                 Welcome to my Drum Machine!
                                 </textPath>
                             </text>
                         </svg>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
 
