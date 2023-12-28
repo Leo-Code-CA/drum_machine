@@ -36,14 +36,17 @@ import { farmAnimals, flyingAnimals, wildAnimals } from './data.js';
     function handleTheme(theme) {
 
         $('.pick').removeClass('d-none');
-        $('.pick').text(`You picked ${theme}`);
+        // $('.pick').text(`You picked ${theme}`);
+        $('.pick').html(`You picked <span>${theme}</span>`);
 
         const bgImg = $('#welcomeimg');
-        const bgColor = $('#welcomecolor');;
-        const btnChoice = $('#choicebtn button');;
-        const btnConfirm = $('#confirmbtn');;
+        const bgColor = $('#welcomecolor');
+        const btnChoice = $('#choicebtn button');
+        const btnConfirm = $('#confirmbtn');
+        const p = $('#welcomep');
+        const title = $('#welcometheme');
 
-        const elements = [bgImg, bgColor, btnChoice, btnConfirm];
+        const elements = [bgImg, bgColor, btnChoice, btnConfirm, p, title];
 
         $.map(elements, function(element, i) {
 
@@ -73,6 +76,12 @@ import { farmAnimals, flyingAnimals, wildAnimals } from './data.js';
                 break;
                 case 3:
                 element.addClass(`welcome__confirmBtn--${theme}`);
+                break;
+                case 4: 
+                element.addClass(`welcome__paragraph--${theme}`);
+                break;
+                case 5:
+                element.addClass(`welcome__theme--${theme}`);
                 break;
                 default:
                 element.addClass(`welcome__default`);

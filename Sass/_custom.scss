@@ -9,176 +9,43 @@ body {
     margin: 0;
 }
 
-.welcome__bgImg {
-    background: url('../images/music_bg.jpg'), rgba(255, 255, 255, 0.7);
-    background-size: 160%;
-    background-position: 50% 110%;
-    background-repeat: no-repeat;
+// COLORS
+
+// basic - welcome
+$welcomeDarkGreen: #385A64;
+$welcomeDarkGreen--hover: #385a64da;
+$welcomeOrange: #FF735C;
+$welcomeWhiteOverlay: rgba(255, 255, 255, 0.7);
+
+// wild
+$darkGreen: rgba(45, 93, 94, 0.9);
+$mediumGreen: rgba(36, 160, 139, 0.9);
+$lightGreen: rgba(190, 234, 214, 0.9);
+$lightGreen--hover: rgb(190, 234, 214);
+$green--btn: rgb(45, 93, 94);
+$orange: rgb(255, 165, 10);
+$orange--hover: rgba(255, 165, 10, 0.8);
+
+// farm 
+$darkOrange: rgba(233, 145, 50, 0.95);
+$meidumOrange: rgba(243, 174, 93, 0.95);
+$lightOrange: rgba(255, 224, 175, 0.95);
+$lightOrange--hover: rgb(255, 224, 175);
+$orange--btn: rgb(233, 145, 50);
+$brown: rgb(187, 98, 70);
+$brown--hover: rgba(187, 98, 70, 0.8);
+
+//wing
+$darkBlue: rgba(0, 83, 159, 0.9);
+$mediumBlue: rgba(84, 189, 221, 0.9);
+$lightBlue: rgba(210, 239, 253, 0.9);
+$lightBlue--hover: rgb(210, 239, 253);
+$blue--btn: rgb(0, 83, 159);
+$pink: rgb(255, 141, 187);
+$pink--hover: rgba(255, 141, 187, 0.8);
 
 
-    @include media-breakpoint-up(sm) {
-        background-position: 50% 65%;
-        background-size: cover;
-        background-blend-mode: overlay;
-    }
-
-    @include media-breakpoint-up(lg) {
-        background-size: 130%;
-    }
-
-    @include media-breakpoint-up(xl) {
-        background-size: 100%;
-    }
-}
-
-.welcome__bgImg--wild {
-    background-image: url('../images/wild.svg');
-    background-size: cover;
-    background-position: 50% 60%;
-    background-blend-mode: initial;
-}
-
-.welcome__bgImg--farm {
-    background-image: url('../images/farm2.svg');
-    background-size: cover;
-    background-position: 50% 30%;
-    background-blend-mode: initial;
-}
-
-.welcome__bgImg--wing {
-    background-image: url('../images/birds.jpg');
-    background-size: cover;
-    background-blend-mode: initial;
-}
-
-
-.welcome__bg {
-    width: min(100%, 23rem);
-    aspect-ratio: 1.1/1;
-    border-radius: 100%;
-    background-color: #FF735C;
-    position: relative;
-    // top: 10%;
-    // left: 50%;
-    // transform: translate(-50%, -10%);
-
-    @include media-breakpoint-up(md) {
-        // width: 40%;
-    }
-}
-
-
-.welcome__bgColor--wild {
-    background-color: rgba(0, 128, 0, 0.6);
-    background: linear-gradient(
-        0deg,
-        rgba(45,93,94, 0.9),
-        rgba(36,160,139, 0.9) 25%,
-        rgba(190,234,214, 0.9) 75%
-    );
-}
-
-.welcome__bgColor--farm {
-    background-color: rgba(237, 175, 60, 0.6);
-    background: linear-gradient(
-        30deg,
-        rgba(233, 145, 50, 0.95),
-        rgba(243, 174, 93, 0.95) 25%,
-        rgba(255, 224, 175, 0.95) 75%
-    );
-}
-
-.welcome__bgColor--wing {
-    background-color: rgba(51, 148, 208, 0.6);
-    background: linear-gradient(
-        180deg,
-        rgba(0,83,159, 0.9),
-        rgba(84,189,221, 0.9),
-        rgba(210,239,253, 0.9)
-    );
-}
-
-.welcome__title {
-    font-size: 1.9rem;
-    width: min(100%, 23rem);
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%);
-    fill: black;
-
-    @include media-breakpoint-up(lg) {
-        top: 35%;
-        transform: translate(-50%, -35%);
-    }
-}
-
-.welcome__choiceBtn {
-    background-color: transparent;
-}
-
-.welcome__choiceBtn--wild {
-    background-color: rgb(45,93,94);
-    color: white;
-}
-
-.theme:nth-child(1):hover {
-    background-color: rgb(255, 224, 175);
-}
-
-.theme:nth-child(2):hover {
-    background-color: rgb(190,234,214);
-    color: black;
-}
-
-.theme:nth-child(3):hover {
-    background-color: rgb(84,189,221);
-    color: black;
-}
-
-.welcome__choiceBtn--wing {
-    background-color: rgb(0,83,159);
-    color: white;
-}
-
-.welcome__choiceBtn--farm {
-    background-color: rgb(233, 145, 50);
-}
-
-.welcome__confirmBtn {
-    background-color: #385A64;
-    color: white;
-}
-
-// .welcome__confirmBtn:hover {
-//     border: 1px solid rgb(188, 178, 178);
-//     // color: rgb(188, 178, 178);
-// }
-
-.welcome__confirmBtn--farm {
-    background-color: rgb(187, 98, 70);
-}
-
-.welcome__confirmBtn--farm:hover {
-    background-color: rgba(187, 98, 70, 0.8);;
-}
-
-.welcome__confirmBtn--wild {
-    background-color: rgb(255, 165, 10);
-}
-
-.welcome__confirmBtn--wild:hover {
-    background-color: rgba(255, 165, 10, 0.8);
-}
-
-.welcome__confirmBtn--wing {
-    background-color: rgb(255, 141, 187);
-}
-
-.welcome__confirmBtn--wing:hover {
-    background-color: rgba(255, 141, 187, 0.8);
-}
-
+// CHECK IF NEEDED OR NOT :)
 .welcome__default {
     background-color: rgb(208, 136, 29);
 }

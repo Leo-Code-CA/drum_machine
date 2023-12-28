@@ -9,6 +9,7 @@
         <meta name="description" content="Build a drum machine to complete FreeCodeCamp's certification project">
         <meta name="author" content="Leo">
         <link rel="stylesheet" href="CSS/main-min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Henny+Penny&family=Rock+Salt&display=swap" rel="stylesheet">
         <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     </head>
@@ -17,28 +18,26 @@
 
         <div class="container-fluid">
             <div class="row vh-100 welcome__bgImg" id="welcomeimg">
-                <!-- <div class="col-12 d-lg-flex align-items-center"> -->
                     <div class="col-12 d-flex flex-column align-items-center mt-5 mt-lg-0 justify-content-lg-center">
-                        <div id="welcomecolor" class="welcome__bg d-flex flex-column justify-content-evenly align-items-center z-1 p-3 mt-3 mt-lg-0">
-                            <p class="w-50 text-center mb-0">Hi there! Pick your favorite please. Don't worry, you'll able to change later on.</p>
-                            <h3 class="pick d-none"></h3>
+                        <div id="welcomecolor" class="welcome__bgColor d-flex flex-column justify-content-evenly align-items-center z-1 p-3 mt-3 mt-lg-0">
+                            <p id="welcomep" class="w-50 text-center welcome__paragraph mb-0">Hi there! Pick your favorite please. Don't worry, you'll able to change later on.</p>
+                            <h3 class="pick d-none" id="welcometheme"></h3>
                             <div id="choicebtn">
                                 <button type="button" class="btn btn-outline-dark theme welcome__themebtn welcome__choiceBtn" id="farm">Farm</button>
                                 <button type="button" class="btn btn-outline-dark theme welcome__themebtn welcome__choiceBtn" id="wild">Wild</button>
                                 <button type="button" class="btn btn-outline-dark theme welcome__themebtn welcome__choiceBtn" id="wing">Wing</button>
                             </div>
                             <button class="btn welcome__choicebtn welcome__confirmBtn" id="confirmbtn">Confirm</button>
+                            <svg class="welcome__title" viewBox="50 -10 400 400">
+                                <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent"/>
+                                <text width="450">
+                                    <textPath alignment-baseline="top" xlink:href="#curve">
+                                    Welcome to my Drum Machine
+                                    </textPath>
+                                </text>
+                            </svg>
                         </div>
-                        <svg class="welcome__title" viewBox="50 -10 400 400">
-                            <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent"/>
-                            <text width="450">
-                                <textPath alignment-baseline="top" xlink:href="#curve">
-                                Welcome to my Drum Machine!
-                                </textPath>
-                            </text>
-                        </svg>
                     </div>
-                <!-- </div> -->
             </div>
         </div>
 
