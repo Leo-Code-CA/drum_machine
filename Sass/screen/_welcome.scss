@@ -36,7 +36,7 @@
     &--farm {
         background-image: url('../../images/farm2.svg');
         background-size: cover;
-        background-position: 50% 30%;
+        background-position: 50% 27%;
         background-blend-mode: initial;
     }
 
@@ -98,7 +98,6 @@
     left: 50%;
     transform: translate(-50%, -10%);
     fill: black;
-    z-index: -1;
 }
 
 // THEME TITLE - WELCOME SCREEN
@@ -133,17 +132,23 @@
 
 .welcome__paragraph {
 
+    font-size: 1rem;
+
+    @include custom.media-breakpoint-up(md) {
+        font-size: 1.2rem;
+    }
 
     &--wild {
-
+        font-size: 1rem;
     }
 
     &--farm {
+        font-size: 1rem;
 
     }
 
     &--wing {
-
+        font-size: 1rem;
         color: white;
 
     }

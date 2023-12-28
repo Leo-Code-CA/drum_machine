@@ -1,4 +1,4 @@
-export const farmAnimals = [
+export const farm = [
     {id: 0, animal: 'Rooster', audio: 'audios/farm/Rooster.m4a', key: 'q'},
     {id: 1, animal: 'Donkey', audio: 'audios/farm/Donkey.m4a', key: 'w'},
     {id: 2, animal: 'Frog', audio: 'audios/farm/Frog.m4a', key: 'e'},
@@ -10,7 +10,7 @@ export const farmAnimals = [
     {id: 8, animal: 'Cat', audio: 'audios/farm/Cat.m4a', key: 'c'}
 ];
 
-export const flyingAnimals = [
+export const wing = [
     {id: 0, animal: 'Bat', audio: 'audios/bird/Bat.m4a', key: 'q'},
     {id: 1, animal: 'Swan', audio: 'audios/bird/Swan.m4a', key: 'w'},
     {id: 2, animal: 'Duck', audio: 'audios/bird/Duck.m4a', key: 'e'},
@@ -22,7 +22,7 @@ export const flyingAnimals = [
     {id: 8, animal: 'Penguin', audio: 'audios/bird/Penguin.m4a', key: 'c'}
 ];
 
-export const wildAnimals = [
+export const wild = [
     {id: 0, animal: 'Lion', audio: 'audios/wild/Lion.m4a', key: 'q'},
     {id: 1, animal: 'Elephant', audio: 'audios/wild/Elephant.m4a', key: 'w'},
     {id: 2, animal: 'Snake', audio: 'audios/wild/Snake.m4a', key: 'e'},
