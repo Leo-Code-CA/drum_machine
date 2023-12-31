@@ -16,6 +16,7 @@
 
     <body>
 
+        <!-- WELCOME PAGE -->
         <div class="container-fluid welcome">
             <div class="row vh-100 welcome__bgImg" id="welcomeimg">
                 <div class="col-12 d-flex flex-column align-items-center mt-5 mt-lg-0 justify-content-lg-center">
@@ -42,60 +43,64 @@
         </div>
 
 
+        <!-- DRUM MACHINE -->
 
+        <div class="container-fluid d-none machine" id="drum-machine">
 
+            <div class="row vh-100 px-4 py-5 flex-column flex-nowrap">
 
-
-
-        <div class="container-xl d-none" id="drum-machine">
-
-            <h1 class="display-2"><del>Drum</del><ins> Moooooo </ins>Machine</h1>
-
-            <div class="row">
-                <!-- ILLUSTRATION -->
-                <div class="col-12 col-lg-6 border">
-                    <img src="images/farm.svg" alt="farm illustration" class="img-fluid">
-                </div>
+                <h1 class="display-2 text-center machine__title">
+                    <del class="d-block">Drum</del>
+                    <ins class="d-block text-decoration-none mt-2"> Moo </ins>
+                    Machine
+                </h1>
 
                 <!-- DRUM MACHINE -->
-                <div class="col-12 col-lg-6 border">
+                <div class="col-12 flex-fill d-flex flex-column gap-2">
+
+                    <!-- <h2 class="text-center mb-0">Play</h2> -->
 
 
                     <!-- 9 DRUM PADS -->
-                    <div class="col-12 col-lg-9 border d-flex flex-column gap-2 p-2">
+                    <div class="col-12 col-lg-9 d-flex flex-column gap-2 p-2 border rounded">
+
+                        <h2 class="text-center mb-0">Play</h2>
+
+                        <div id="display" class="p-1 fs-5 text-center machine__display d-none"></div>
+                        
 
                         <div class="col-12 d-flex justify-content-evenly">
-                            <button id="0" class="drum-pad col-3 text-center border">Q
+                            <button type="button" id="0" class="drum-pad col-3 text-center">Q
                                 <audio src="" class="clip" id="Q"></audio>
                             </button>
-                            <button id="1" class="drum-pad col-3 text-center border">W
+                            <button type="button" id="1" class="drum-pad col-3 text-center">W
                                 <audio src="" class="clip" id="W"></audio>
                             </button>
-                            <button id="2" class="drum-pad col-3 text-center border">E
+                            <button type="button" id="2" class="drum-pad col-3 text-center">E
                                 <audio src="" class="clip" id="E"></audio>
                             </button>
                         </div>
 
                         <div class="col-12 d-flex justify-content-evenly">
-                            <button id="3" class="drum-pad col-3 text-center border">A
+                            <button type="button" id="3" class="drum-pad col-3 text-center">A
                                 <audio src="" class="clip" id="A"></audio>
                             </button>
-                            <button id="4" class="drum-pad col-3 text-center border">S
+                            <button type="button" id="4" class="drum-pad col-3 text-center">S
                                 <audio src="" class="clip" id="S"></audio>
                             </button>
-                            <button id="5" class="drum-pad col-3 text-center border">D
+                            <button type="button" id="5" class="drum-pad col-3 text-center">D
                                 <audio src="" class="clip" id="D"></audio>
                             </button>
                         </div>
 
                         <div class="col-12 d-flex justify-content-evenly">
-                            <button id="6" class="drum-pad col-3 text-center border">Z
+                            <button type="button" id="6" class="drum-pad col-3 text-center">Z
                                 <audio src="" class="clip" id="Z"></audio>
                             </button>
-                            <button id="7" class="drum-pad col-3 text-center border">X
+                            <button type="button" id="7" class="drum-pad col-3 text-center">X
                                 <audio src="" class="clip" id="X"></audio>
                             </button>
-                            <button id="8" class="drum-pad col-3 text-center border">C
+                            <button type="button" id="8" class="drum-pad col-3 text-center">C
                                 <audio src="" class="clip" id="C"></audio>
                             </button>
                         </div>
@@ -103,19 +108,34 @@
                     </div>
 
                     <!-- CONTROL AND PREVIEW PANEL -->
-                    <div class="col-12 col-lg-3 border d-flex flex-column gap-2">
+                    <div class="col-12 col-lg-3 d-flex flex-column gap-2 border rounded p-2 flex-fill">
                     
                         <h2 class="text-center">Record</h2>
-                        <div class="d-flex justify-content-evenly">
-                            <button id="rec" class="try">Rec</button>
-                            <button id="play">Play</button>
-                            <button id="pause">Pause</button>
-                            <!-- <button id="resume">Res</button> -->
-                            <button id="stop" class="try">Stop</button>
-                            <button id="del">Del</button>
+                        <div class="d-flex justify-content-center machine__controls rounded-pill">
+                            <button type="button" id="rec" class="rounded-pill flex-fill">
+                                Rec
+                                <span class="d-none"></span>
+                            </button>
+                            <button type="button" id="stop" class="rounded-pill flex-fill">
+                                Stop
+                                <span class="d-none"></span>
+                            </button>
+                            <button type="button" id="del" class="rounded-pill flex-fill">
+                                Del
+                                <span class="d-none"></span>
+                            </button>
+                            <button type="button" id="play" class="rounded-pill flex-fill">
+                                Play
+                                <span class="d-none"></span>
+                            </button>
+                            <button type="button" id="pause" class="rounded-pill flex-fill">
+                                Pause
+                                <span class="d-none"></span>
+                                <span class="d-none"></span>
+                            </button>
                         </div>
-                        <div id="display" class="border p-2 m-2 fs-4 text-center"></div>
-                        <ol id="list">
+                        <!-- <div id="display" class="p-2 m-2 fs-4 text-center"></div> -->
+                        <ol id="list" class="flex-column d-flex flex-wrap align-items-start mh-100 overflow-y-scroll">
                             
                         </ol>
                        

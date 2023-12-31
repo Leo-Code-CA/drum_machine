@@ -105,7 +105,7 @@
 .welcome__theme {
 
     &--wild span {
-        font-family: 'Rock Salt', cursive;
+        font-family: custom.$wildFont;
         font-size: 2.2rem;
         vertical-align: middle;
         font-weight: bold;
@@ -113,14 +113,14 @@
     }
 
     &--farm span {
-        font-family: 'Henny Penny', ;
+        font-family: custom.$farmFont;
         font-size: 3rem;
         text-transform: capitalize;
         vertical-align: middle;
     }
 
     &--wing span {
-        font-family: 'Great Vibes', cursive;
+        font-family: custom.$wingFont;
         font-size: 3rem;
         font-weight: bold;
         text-transform: capitalize;

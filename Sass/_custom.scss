@@ -2,12 +2,17 @@
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 // BASIC SETTINGS 
-body {
-    min-height: 100vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
+// body {
+//     min-height: 100vh;
+//     width: 100%;
+//     padding: 0;
+//     margin: 0;
+// }
+
+// FONTS 
+$wildFont: 'Rock Salt', cursive;
+$farmFont: 'Henny Penny', cursive;
+$wingFont: 'Great Vibes', cursive;
 
 // COLORS
 

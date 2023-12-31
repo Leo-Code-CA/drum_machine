@@ -1,0 +1,173 @@
+@use '../custom';
+
+.machine {
+    background-repeat: no-repeat;
+
+    &--wild {
+        background-image: url('../../images/wild_bg.svg');
+        background-size: 200% 200%;
+        background-position: 50% 50%;
+    }
+
+    // &--farm {
+
+    // }
+
+    // &--wing {
+
+    // }
+
+    &__title {
+        
+
+        &--wild {
+            font-family: custom.$wildFont;
+        }
+    
+        &--farm {
+            font-family: custom.$farmFont;
+        }
+    
+        &--wing {
+            font-family: custom.$wingFont;
+        }
+
+        del {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1rem;
+            display: block;
+        }
+
+    }
+
+    &__controls {
+
+
+        &--wild {
+            background-color: #FFEEC2;
+        }
+
+        // &--farm {
+
+        // }
+
+        // &--wing {
+
+        // }
+
+        &--hover {
+            border: 1px solid black !important;
+            width: 30%;
+            text-align: left;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: nowrap;
+            // transition: all 2s ease-in-out;
+        }
+
+        button {
+            border: none;
+            // background-color: #FFEEC2;
+            border-radius: 20%;
+            // transition: all 2s ease-in-out;
+
+        }
+
+        button:nth-child(1) span {
+            width: 0.7rem;
+            height: 0.7rem;
+            background-color: red;
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        button:nth-child(4) span {
+            border-left: 0.6rem solid black;
+            border-top: 0.4rem solid transparent;
+            border-bottom: 0.4rem solid transparent;
+            display: inline-block;
+        }
+
+        button:nth-child(5) span {
+            width: 0.2rem;
+            height: 0.7rem;
+            background-color: black;
+            display: inline-block;
+        }
+
+        button:nth-child(5) span:nth-child(1) {
+            margin-right: -0.2rem;
+        }
+
+        button:nth-child(2) span {
+            display: inline-block;
+            height: 0.7rem;
+            width: 0.7rem;
+            background-color: black;
+        }
+
+        button:nth-child(3) span {
+            display: inline-block;
+            width: 0.15rem;
+            height: 1rem;
+            margin: 0 0.3rem;
+        }
+
+        button:nth-child(3) span::after {
+            content: "";
+            position: absolute;
+            height: 1rem;
+            width: 0.15rem;
+            background-color: black;
+            transform: rotate(45deg);
+        }
+
+        button:nth-child(3) span::before {
+            content: "";
+            position: absolute;
+            height: 1rem;
+            width: 0.15rem;
+            background-color: black;
+            transform: rotate(-45deg);
+        }
+    
+    }
+
+    &__display {
+        border-radius: 50%;
+
+        &--wild {
+            border: 0.6rem solid #FFEEC2;
+        }
+        
+            // &--farm {
+        
+            // }
+        
+            // &--wing {
+        
+            // }
+
+    }
+}
+
+.drum-pad {
+
+    border: none;
+    border-radius: 11px 15px 9px 17px;
+    color: white;
+ 
+
+    &--wild {
+        background-color: custom.$darkGreen;
+    }
+    
+        // &--farm {
+    
+        // }
+    
+        // &--wing {
+    
+        // }
+}

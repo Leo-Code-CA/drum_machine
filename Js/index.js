@@ -1,5 +1,6 @@
 import { farm, wing, wild } from './data.js';
 import { handleTheme } from './themes.js';
+import { machineTheme } from './themes.js';
 
 let currentChoice = ""
 let soundsRecorded = [];
@@ -30,9 +31,11 @@ $(document).ready(function() {
     function handleConfirm(theme) {
 
         theme === 'farm' ? nextPage(farm) : theme === 'wing' ? nextPage(wing) : nextPage(wild);
+        theme === 'farm' ? machineTheme('farm') : theme === 'wing' ? machineTheme('wing') : machineTheme('wild');
 
         $('.welcome').addClass('d-none');
         $('#drum-machine').removeClass('d-none');
+
 
     }
 
@@ -50,6 +53,7 @@ $(document).ready(function() {
         $("button[class|='drum']").click(function() {
             $(this).children()[0].play();
             $('#display').html(animals[this.id].animal);
+            $('#display').removeClass('d-none');
         });
 
         // make the corresponding key press trigger the audio AND update the sound list
@@ -65,9 +69,47 @@ $(document).ready(function() {
                 if (animal.key === currentKey.toLowerCase()) {
                     $(`button[class|='drum']:eq(${i})`).children()[0].play();
                     $('#display').html(animal.animal);
+                    $('#display').removeClass('d-none');
                 }
             })
         })
+
+    // CONTROL - BUTTONS HOVER AND ACTIVE
+
+    $('.machine__controls button').on('mouseenter', function() {
+        $(this).addClass('machine__controls--hover');
+        $(this).children().removeClass('d-none');
+    })
+
+    $('.machine__controls button').on('mouseleave', function() {
+        if ($(this).children().hasClass('hold')) {
+            return;
+        } else {
+            $(this).children().addClass('d-none');
+            $(this).removeClass('machine__controls--hover');
+        }
+    })
+
+    $('.machine__controls button:not(:nth-child(3))').on('click', function() {
+
+        $(this).children().addClass('hold');
+
+        const current = this.id;
+
+        console.log(current);
+
+
+        $('.machine__controls button:not(:nth-child(3))').map((i, control) => {
+            
+            if (control.id !== current) {
+
+                $(control).removeClass('machine__controls--hover');
+                $(control).children().removeClass('hold').addClass('d-none');
+
+            }
+        })     
+
+    })
 
         
     // CONTROL - RECORD
