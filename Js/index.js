@@ -8,6 +8,10 @@ let soundsList = soundsRecorded;
 
 $(document).ready(function() {
 
+    $('.machine__home').on('click', function() {
+        location.reload();
+    })
+
 
     $('audio').on('playing', function() {
         $(this).removeClass('ended');

@@ -4,21 +4,33 @@
     background-repeat: no-repeat;
 
     &--wild {
-        background-image: url('../../images/wild_bg.svg');
-        background-size: 200% 200%;
+        background-image: url('../../images/wild_bg.png');
+        background-size: 130% 130%;
         background-position: 50% 50%;
     }
 
-    // &--farm {
+    &--farm {
+        background-image: url('../../images/farm_bg.jpg');
+        background-size: 110% 140%;
+        background-position: 50% 50%;
+    }
 
-    // }
+    &--wing {
+        background-image: url('../../images/birds_bg.jpg');
+        background-size: 140% 130%;
+        background-position: 50% 50%;
+    }
 
-    // &--wing {
+    &__container {
 
-    // }
+        @include custom.media-breakpoint-up(md) {
+            width: 75%;
+            margin: 0 auto;
+        }
+    }
 
     &__title {
-        
+        font-size: 3rem;
 
         &--wild {
             font-family: custom.$wildFont;
@@ -34,26 +46,32 @@
 
         del {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 1rem;
+            font-size: 1.2rem;
             display: block;
+        }
+
+        ins {
+            margin-bottom: -1rem;
         }
 
     }
 
     &__controls {
 
+        
+
 
         &--wild {
             background-color: #FFEEC2;
         }
 
-        // &--farm {
+        &--farm {
+            background-color: #C7CA44;
+        }
 
-        // }
-
-        // &--wing {
-
-        // }
+        &--wing {
+            background-color: #FFCCC2;
+        }
 
         &--hover {
             border: 1px solid black !important;
@@ -141,15 +159,49 @@
             border: 0.6rem solid #FFEEC2;
         }
         
-            // &--farm {
+        &--farm {
+            border: 0.6rem solid #C7CA44;
+        }
         
-            // }
-        
-            // &--wing {
-        
-            // }
+        &--wing {
+            border: 0.6rem solid #FFCCC2;
+        }
 
     }
+
+    &__sounds-list li {
+        width: 45%;
+
+        &:nth-child(even) {
+            margin-left: 1rem;
+        }
+    }
+
+    &__pads, &__panel {
+        border: 1px solid rgba(black, 0.6);
+    }
+
+    &__home {
+        width: 3rem;
+        height: 3rem;
+        top: 2%;
+        left: 98%;
+        transform: translate(-98%, -2%);
+        border: 1px solid rgba(black, 0.6);
+
+        &--wild {
+            background-color: custom.$darkGreen;
+        }
+
+        &--farm {
+            background-color: custom.$darkOrange;
+        }
+
+        &--wing {
+            background-color: custom.$darkBlue;
+        }
+    }
+
 }
 
 .drum-pad {
@@ -157,17 +209,22 @@
     border: none;
     border-radius: 11px 15px 9px 17px;
     color: white;
+
+    @include custom.media-breakpoint-up(md) {
+        height: 3rem;
+        border-radius: 21px 25px 19px 27px;
+    }
  
 
     &--wild {
         background-color: custom.$darkGreen;
     }
     
-        // &--farm {
+    &--farm {
+        background-color: custom.$darkOrange;
+    }
     
-        // }
-    
-        // &--wing {
-    
-        // }
+    &--wing {
+        background-color: custom.$darkBlue;
+    }
 }

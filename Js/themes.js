@@ -59,9 +59,10 @@ export function machineTheme(theme) {
     const background = $('.machine');
     const display = $('.machine__display');
     const pads = $('.drum-pad');
-    const controls = $('.machine__controls, .machine__controls button')
+    const controls = $('.machine__controls, .machine__controls button');
+    const btn = $('.machine__home');
 
-    const elements = [title, background, display, pads, controls];
+    const elements = [title, background, display, pads, controls, btn];
 
     $.map(elements, function(element, i) {
 
@@ -81,7 +82,7 @@ export function machineTheme(theme) {
 
         switch (i) {
             case 0:
-            theme === 'wild' ? element.text('Grr') : theme === farm ? element.text('Moo') : element.text('Cui');
+            theme === 'wild' ? element.text('Grr') : theme === 'farm' ? element.text('Moo') : element.text('Piou');
             element.addClass(`machine__title--${theme}`);
             break;
             case 1:
@@ -95,6 +96,9 @@ export function machineTheme(theme) {
             break;
             case 4:
             element.addClass(`machine__controls--${theme}`);
+            break;
+            case 5:
+            element.addClass(`machine__home--${theme}`);
             break;
         }
 

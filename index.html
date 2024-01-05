@@ -8,6 +8,7 @@
         <title>Drum Machine | FCC Project</title>
         <meta name="description" content="Build a drum machine to complete FreeCodeCamp's certification project">
         <meta name="author" content="Leo">
+        <link rel="icon" type="image/x-icon" href="images/freecodecamplogo.svg">
         <link rel="stylesheet" href="CSS/main-min.css">
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Henny+Penny&family=Rock+Salt&display=swap" rel="stylesheet">
         <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
@@ -45,24 +46,25 @@
 
         <!-- DRUM MACHINE -->
 
-        <div class="container-fluid d-none machine" id="drum-machine">
+        <div class="container-fluid d-none machine p-md-5" id="drum-machine">
 
             <div class="row vh-100 px-4 py-5 flex-column flex-nowrap">
 
+                <button class="position-absolute machine__home rounded">
+                    <img src="images/home.svg" alt="" class="h-100 w-100 d-block">
+                </button>
+
                 <h1 class="display-2 text-center machine__title">
                     <del class="d-block">Drum</del>
-                    <ins class="d-block text-decoration-none mt-2"> Moo </ins>
+                    <ins class="d-block text-decoration-none mt-1"></ins>
                     Machine
                 </h1>
 
                 <!-- DRUM MACHINE -->
-                <div class="col-12 flex-fill d-flex flex-column gap-2">
-
-                    <!-- <h2 class="text-center mb-0">Play</h2> -->
-
+                <div class="col-12 flex-fill d-flex flex-column gap-2 h-75 machine__container">
 
                     <!-- 9 DRUM PADS -->
-                    <div class="col-12 col-lg-9 d-flex flex-column gap-2 p-2 border rounded">
+                    <div class="col-12 col-lg-9 d-flex flex-column gap-2 p-2 p-md-3 rounded machine__pads">
 
                         <h2 class="text-center mb-0">Play</h2>
 
@@ -108,9 +110,9 @@
                     </div>
 
                     <!-- CONTROL AND PREVIEW PANEL -->
-                    <div class="col-12 col-lg-3 d-flex flex-column gap-2 border rounded p-2 flex-fill">
+                    <div class="col-12 col-lg-3 d-flex flex-column gap-2 rounded p-2 h-50 machine__panel">
                     
-                        <h2 class="text-center">Record</h2>
+                        <h2 class="text-center mb-0">Record</h2>
                         <div class="d-flex justify-content-center machine__controls rounded-pill">
                             <button type="button" id="rec" class="rounded-pill flex-fill">
                                 Rec
@@ -134,10 +136,8 @@
                                 <span class="d-none"></span>
                             </button>
                         </div>
-                        <!-- <div id="display" class="p-2 m-2 fs-4 text-center"></div> -->
-                        <ol id="list" class="flex-column d-flex flex-wrap align-items-start mh-100 overflow-y-scroll">
-                            
-                        </ol>
+                    
+                        <ol id="list" class="h-100 overflow-y-scroll machine__sounds-list d-flex flex-wrap align-content-start align-items-start mb-0 column-gap-2"></ol>
                        
                     </div>
 
