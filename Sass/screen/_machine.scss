@@ -38,29 +38,17 @@
 
         @include custom.media-breakpoint-up(md) {
             width: 75%;
-            // padding-top: 5rem !important;
-            // padding-bottom: 5rem !important;
         }
 
-        // @include custom.media-breakpoint-up(lg) {
-        //     width: 85%;
-        //     padding-top: 4rem !important;
-        //     padding-bottom: 4rem !important;
-        // }
-
-        // @include custom.media-breakpoint-up(xl) {
-        //     width: 80%;
-        // }
+        @media screen and (orientation: landscape) {
+            width: 80%;
+        }
     }
 
     &__subheading {
 
         @include custom.media-breakpoint-up(md) {
             font-size: custom.$h1-font-size;
-        }
-
-        @include custom.media-breakpoint-up(lg) {
-            font-size: custom.$h3-font-size;
         }
     }
 
@@ -71,9 +59,6 @@
             font-size: 4.5rem;
         }
 
-        @include custom.media-breakpoint-up(lg) {
-            font-size: 3.5rem;
-        }
 
         &--wild {
             font-family: custom.$wildFont;
@@ -113,6 +98,14 @@
             height: 2rem;
         }
 
+        @include custom.media-breakpoint-up(lg) {
+            height: 3rem;
+        }
+
+        @media screen and (orientation: landscape) {
+            height: 2.5rem;
+        }
+
 
         &--wild {
             background-color: #FFEEC2;
@@ -129,11 +122,12 @@
         &--hover {
             border: 1px solid black !important;
             width: 30%;
-            text-align: left;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-wrap: nowrap;
+            // text-align: left;
+            // display: flex;
+            // justify-content: center;
+            // gap: 10%;
+            // align-items: center;
+            // flex-wrap: nowrap;
 
 
             @include custom.media-breakpoint-up(md) {
@@ -143,10 +137,7 @@
 
         button {
             border: none;
-            // background-color: #FFEEC2;
             border-radius: 20%;
-            // transition: all 2s ease-in-out;
-
         }
 
         button:nth-child(1) span {
@@ -212,15 +203,15 @@
     &__display {
         border-radius: 50%;
         border-style: solid;
-        border-width: 0.6rem;
+        border-width: 0.5rem;
 
         @include custom.media-breakpoint-up(lg) {
-            border-width: 1rem;
+            border-width: 0.7rem;
         }
 
-        // @include custom.media-breakpoint-up(md) {
-        //     font-size: custom.$h4-font-size !important;
-        // }
+        @media screen and (orientation: landscape) {
+            margin-top: -0.6rem;
+        }
 
         &--wild {
             border-color: #FFEEC2;
@@ -242,26 +233,18 @@
         @include custom.media-breakpoint-up(lg) {
             width: 32%;
         }
-
-        &:nth-child(even) {
-            margin-left: 1rem;
-
-            @include custom.media-breakpoint-up(lg) {
-                margin-left: 0;
-            }
-        }
     }
 
     &__pads, &__panel {
         border: 1px solid rgba(black, 0.6);
         height: 50%;
+
+        @media screen and (orientation: landscape) {
+            width: 50%;
+            height: auto;
+        }
     }
 
-    // &__panel {
-
-    //     height: 50%;
-
-    // }
 
     &__home {
         width: 3rem;
@@ -291,18 +274,18 @@
 
     &__pads-box {
         flex-direction: column;
-        // height: auto;
         max-height: 75%;
         flex-grow: 1;
 
-        // @include custom.media-breakpoint-up(lg) {
-        //     max-height: 68%;
-        //     height: auto;
-        // }
 
         @media screen and (orientation: landscape) {
             flex-direction: row;
+            max-height: 60%;
         }
+    }
+
+    &__pads-row {
+        max-height: 4rem;
     }
 
 }
@@ -314,7 +297,6 @@
     color: white;
 
     @include custom.media-breakpoint-up(md) {
-        // height: 3rem;
         border-radius: 21px 25px 19px 27px;
     }
  

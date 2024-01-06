@@ -64,14 +64,14 @@
                 <div class="col-12 d-flex gap-2 machine__pads-box">
 
                     <!-- 9 DRUM PADS -->
-                    <div class="d-flex flex-column gap-2 gap-md-4 p-2 rounded machine__pads">
+                    <div class="d-flex flex-column gap-2 gap-md-4 p-2 rounded machine__pads justify-content-evenly">
 
                         <h2 class="text-center mb-0 machine__subheading">Play</h2>
 
-                        <div id="display" class="text-center machine__display d-none"></div>
+                        <div id="display" class="text-center machine__display d-none p-md-1 p-lg-2"></div>
                         
 
-                        <div class="col-12 d-flex justify-content-evenly flex-fill">
+                        <div class="col-12 d-flex justify-content-evenly flex-fill machine__pads-row">
                             <button type="button" id="0" class="drum-pad col-3 text-center">Q
                                 <audio src="" class="clip" id="Q"></audio>
                             </button>
@@ -83,7 +83,7 @@
                             </button>
                         </div>
 
-                        <div class="col-12 d-flex justify-content-evenly flex-fill">
+                        <div class="col-12 d-flex justify-content-evenly flex-fill machine__pads-row">
                             <button type="button" id="3" class="drum-pad col-3 text-center">A
                                 <audio src="" class="clip" id="A"></audio>
                             </button>
@@ -95,7 +95,7 @@
                             </button>
                         </div>
 
-                        <div class="col-12 d-flex justify-content-evenly flex-fill">
+                        <div class="col-12 d-flex justify-content-evenly flex-fill machine__pads-row">
                             <button type="button" id="6" class="drum-pad col-3 text-center">Z
                                 <audio src="" class="clip" id="Z"></audio>
                             </button>
@@ -112,28 +112,28 @@
                     <!-- CONTROL AND PREVIEW PANEL -->
                     <div class="d-flex flex-column gap-2 rounded p-2 machine__panel flex-fill overflow-y-auto">
                     
-                        <h2 class="text-center mb-0 mb-md-3 machine__subheading">Record</h2>
+                        <h2 class="text-center mb-0 machine__subheading">Record</h2>
                         <div class="d-flex justify-content-center machine__controls rounded-pill flex-shrink-0">
                             <button type="button" id="rec" class="rounded-pill flex-fill">
                                 Rec
-                                <span class="d-none"></span>
+                                <span class="d-none ms-2"></span>
                             </button>
                             <button type="button" id="stop" class="rounded-pill flex-fill">
                                 Stop
-                                <span class="d-none"></span>
+                                <span class="d-none ms-2"></span>
                             </button>
                             <button type="button" id="del" class="rounded-pill flex-fill">
                                 Del
-                                <span class="d-none"></span>
+                                <span class="d-none ms-2 align-middle"></span>
                             </button>
                             <button type="button" id="play" class="rounded-pill flex-fill">
                                 Play
-                                <span class="d-none"></span>
+                                <span class="d-none ms-2"></span>
                             </button>
                             <button type="button" id="pause" class="rounded-pill flex-fill">
                                 Pause
-                                <span class="d-none"></span>
-                                <span class="d-none"></span>
+                                <span class="d-none ms-2"></span>
+                                <span class="d-none ms-1"></span>
                             </button>
                         </div>
                     
