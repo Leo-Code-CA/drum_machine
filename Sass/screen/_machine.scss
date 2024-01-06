@@ -2,35 +2,78 @@
 
 .machine {
     background-repeat: no-repeat;
+    background-position: 50% 50%;
 
     &--wild {
         background-image: url('../../images/wild_bg.png');
         background-size: 130% 130%;
-        background-position: 50% 50%;
+
+        @media screen and (orientation: landscape) {
+            background-image: url('../../images/wild_bg_rotate.png');
+            background-size: 110% 130%;
+        }
     }
 
     &--farm {
         background-image: url('../../images/farm_bg.jpg');
         background-size: 110% 140%;
-        background-position: 50% 50%;
+
+        @media screen and (orientation: landscape) {
+            background-image: url('../../images/farm_bg_rotate.jpg');
+            background-size: 110% 110%;
+        }
     }
 
     &--wing {
         background-image: url('../../images/birds_bg.jpg');
         background-size: 140% 130%;
-        background-position: 50% 50%;
+
+        @media screen and (orientation: landscape) {
+            background-image: url('../../images/birds_bg_rotate.jpg');
+            background-size: 120% 130%;
+        }
     }
 
     &__container {
 
         @include custom.media-breakpoint-up(md) {
             width: 75%;
-            margin: 0 auto;
+            // padding-top: 5rem !important;
+            // padding-bottom: 5rem !important;
+        }
+
+        // @include custom.media-breakpoint-up(lg) {
+        //     width: 85%;
+        //     padding-top: 4rem !important;
+        //     padding-bottom: 4rem !important;
+        // }
+
+        // @include custom.media-breakpoint-up(xl) {
+        //     width: 80%;
+        // }
+    }
+
+    &__subheading {
+
+        @include custom.media-breakpoint-up(md) {
+            font-size: custom.$h1-font-size;
+        }
+
+        @include custom.media-breakpoint-up(lg) {
+            font-size: custom.$h3-font-size;
         }
     }
 
     &__title {
         font-size: 3rem;
+
+        @include custom.media-breakpoint-up(md) {
+            font-size: 4.5rem;
+        }
+
+        @include custom.media-breakpoint-up(lg) {
+            font-size: 3.5rem;
+        }
 
         &--wild {
             font-family: custom.$wildFont;
@@ -48,17 +91,27 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 1.2rem;
             display: block;
+
+            @include custom.media-breakpoint-up(md) {
+                font-size: 1.5rem;
+            }
         }
 
         ins {
             margin-bottom: -1rem;
+
+            @include custom.media-breakpoint-up(md) {
+                margin-bottom: -1.7rem;
+            }
         }
 
     }
 
     &__controls {
 
-        
+        @include custom.media-breakpoint-up(md) {
+            height: 2rem;
+        }
 
 
         &--wild {
@@ -81,7 +134,11 @@
             justify-content: space-evenly;
             align-items: center;
             flex-wrap: nowrap;
-            // transition: all 2s ease-in-out;
+
+
+            @include custom.media-breakpoint-up(md) {
+                width: 15%;
+            }
         }
 
         button {
@@ -154,17 +211,27 @@
 
     &__display {
         border-radius: 50%;
+        border-style: solid;
+        border-width: 0.6rem;
+
+        @include custom.media-breakpoint-up(lg) {
+            border-width: 1rem;
+        }
+
+        // @include custom.media-breakpoint-up(md) {
+        //     font-size: custom.$h4-font-size !important;
+        // }
 
         &--wild {
-            border: 0.6rem solid #FFEEC2;
+            border-color: #FFEEC2;
         }
         
         &--farm {
-            border: 0.6rem solid #C7CA44;
+            border-color: #C7CA44;
         }
         
         &--wing {
-            border: 0.6rem solid #FFCCC2;
+            border-color: #FFCCC2;
         }
 
     }
@@ -172,14 +239,29 @@
     &__sounds-list li {
         width: 45%;
 
+        @include custom.media-breakpoint-up(lg) {
+            width: 32%;
+        }
+
         &:nth-child(even) {
             margin-left: 1rem;
+
+            @include custom.media-breakpoint-up(lg) {
+                margin-left: 0;
+            }
         }
     }
 
     &__pads, &__panel {
         border: 1px solid rgba(black, 0.6);
+        height: 50%;
     }
+
+    // &__panel {
+
+    //     height: 50%;
+
+    // }
 
     &__home {
         width: 3rem;
@@ -188,6 +270,11 @@
         left: 98%;
         transform: translate(-98%, -2%);
         border: 1px solid rgba(black, 0.6);
+
+        @include custom.media-breakpoint-up(md) {
+            width: 4rem;
+            height: 4rem;
+        }
 
         &--wild {
             background-color: custom.$darkGreen;
@@ -202,6 +289,22 @@
         }
     }
 
+    &__pads-box {
+        flex-direction: column;
+        // height: auto;
+        max-height: 75%;
+        flex-grow: 1;
+
+        // @include custom.media-breakpoint-up(lg) {
+        //     max-height: 68%;
+        //     height: auto;
+        // }
+
+        @media screen and (orientation: landscape) {
+            flex-direction: row;
+        }
+    }
+
 }
 
 .drum-pad {
@@ -211,7 +314,7 @@
     color: white;
 
     @include custom.media-breakpoint-up(md) {
-        height: 3rem;
+        // height: 3rem;
         border-radius: 21px 25px 19px 27px;
     }
  

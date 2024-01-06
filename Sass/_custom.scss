@@ -1,6 +1,13 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
+// GLOABL
+body {
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-lg;
+    }
+}
 
 // FONTS 
 $wildFont: 'Rock Salt', cursive;

@@ -46,9 +46,9 @@
 
         <!-- DRUM MACHINE -->
 
-        <div class="container-fluid d-none machine p-md-5" id="drum-machine">
+        <div class="container-fluid d-none machine" id="drum-machine">
 
-            <div class="row vh-100 px-4 py-5 flex-column flex-nowrap">
+            <div class="machine__container row vh-100 px-4 py-5 flex-column flex-nowrap justify-content-center mx-auto">
 
                 <button class="position-absolute machine__home rounded">
                     <img src="images/home.svg" alt="" class="h-100 w-100 d-block">
@@ -61,17 +61,17 @@
                 </h1>
 
                 <!-- DRUM MACHINE -->
-                <div class="col-12 flex-fill d-flex flex-column gap-2 h-75 machine__container">
+                <div class="col-12 d-flex gap-2 machine__pads-box">
 
                     <!-- 9 DRUM PADS -->
-                    <div class="col-12 col-lg-9 d-flex flex-column gap-2 p-2 p-md-3 rounded machine__pads">
+                    <div class="d-flex flex-column gap-2 gap-md-4 p-2 rounded machine__pads">
 
-                        <h2 class="text-center mb-0">Play</h2>
+                        <h2 class="text-center mb-0 machine__subheading">Play</h2>
 
-                        <div id="display" class="p-1 fs-5 text-center machine__display d-none"></div>
+                        <div id="display" class="text-center machine__display d-none"></div>
                         
 
-                        <div class="col-12 d-flex justify-content-evenly">
+                        <div class="col-12 d-flex justify-content-evenly flex-fill">
                             <button type="button" id="0" class="drum-pad col-3 text-center">Q
                                 <audio src="" class="clip" id="Q"></audio>
                             </button>
@@ -83,7 +83,7 @@
                             </button>
                         </div>
 
-                        <div class="col-12 d-flex justify-content-evenly">
+                        <div class="col-12 d-flex justify-content-evenly flex-fill">
                             <button type="button" id="3" class="drum-pad col-3 text-center">A
                                 <audio src="" class="clip" id="A"></audio>
                             </button>
@@ -95,7 +95,7 @@
                             </button>
                         </div>
 
-                        <div class="col-12 d-flex justify-content-evenly">
+                        <div class="col-12 d-flex justify-content-evenly flex-fill">
                             <button type="button" id="6" class="drum-pad col-3 text-center">Z
                                 <audio src="" class="clip" id="Z"></audio>
                             </button>
@@ -110,10 +110,10 @@
                     </div>
 
                     <!-- CONTROL AND PREVIEW PANEL -->
-                    <div class="col-12 col-lg-3 d-flex flex-column gap-2 rounded p-2 h-50 machine__panel">
+                    <div class="d-flex flex-column gap-2 rounded p-2 machine__panel flex-fill overflow-y-auto">
                     
-                        <h2 class="text-center mb-0">Record</h2>
-                        <div class="d-flex justify-content-center machine__controls rounded-pill">
+                        <h2 class="text-center mb-0 mb-md-3 machine__subheading">Record</h2>
+                        <div class="d-flex justify-content-center machine__controls rounded-pill flex-shrink-0">
                             <button type="button" id="rec" class="rounded-pill flex-fill">
                                 Rec
                                 <span class="d-none"></span>
@@ -137,7 +137,7 @@
                             </button>
                         </div>
                     
-                        <ol id="list" class="h-100 overflow-y-scroll machine__sounds-list d-flex flex-wrap align-content-start align-items-start mb-0 column-gap-2"></ol>
+                        <ol id="list" class="overflow-y-auto machine__sounds-list d-flex flex-wrap align-content-start align-items-start mb-0 column-gap-2"></ol>
                        
                     </div>
 
