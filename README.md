@@ -34,11 +34,8 @@ The exact requirements:
 
 ### Screenshot
 
-<div>
-    <img src="./public/markdown-previewer-editor-previewer.jpg" alt="markdown previewer editor and previewer" style="width: 100%">
-    <img src="./public/markdown-previewer-cheatsheet.jpg" alt="markdown previewer cheatsheet" style="width: 100%">
-    <img src="./public/markdown-previewer-tests.jpg" alt="markdown previewer tests" style="width: 100%">
-</div>
+![Drum Machine Overview](./images/drum_machine_overview.jpg)
+![Drum Machine Tests - 8 / 8](./images/drum_machine_tests.jpg)
 
 ### Links
 
@@ -138,4 +135,3 @@ Finally, a few months ago, at the very beginning of my coding journey, I had str
 
 - GitHub - [@Leo-Code-CA](https://github.com/Leo-Code-CA)
 - FreeCodeCamp - [@Leo-code](https://www.freecodecamp.org/Leo-code)
-
