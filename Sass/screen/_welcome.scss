@@ -5,7 +5,7 @@
     // BACKGROUND IMAGE - WELCOME SCREEN
 
     &__bgImg {
-        background: url('../images/music_bg.jpg'), custom.$welcomeWhiteOverlay;
+        background: url('./images/music_bg.jpg'), custom.$welcomeWhiteOverlay;
         background-size: 160%;
         background-position: 50% 110%;
         background-repeat: no-repeat;
@@ -25,7 +25,7 @@
         }
 
         &--wild {
-            background-image: url('../../images/wild.svg');
+            background-image: url('./../images/wild.svg');
             background-size: cover;
             background-position: 30% 60%;
             background-blend-mode: initial;
@@ -36,14 +36,14 @@
         }
 
         &--farm {
-            background-image: url('../../images/farm.svg');
+            background-image: url('./../images/farm.svg');
             background-size: cover;
             background-position: 50% 27%;
             background-blend-mode: initial;
         }
 
         &--wing {
-            background-image: url('../../images/birds.jpg');
+            background-image: url('./../images/birds.jpg');
             background-size: cover;
             background-blend-mode: initial;
         }
