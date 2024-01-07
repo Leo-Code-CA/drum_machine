@@ -7,31 +7,31 @@
     // BACKGROUND IMAGE - DRUM MACHINE SCREEN
 
     &--wild {
-        background-image: url('../../images/wild_bg.png');
+        background-image: url('./../images/wild_bg.png');
         background-size: 130% 130%;
 
         @media screen and (orientation: landscape) {
-            background-image: url('../../images/wild_bg_rotate.png');
+            background-image: url('./../images/wild_bg_rotate.png');
             background-size: 110% 130%;
         }
     }
 
     &--farm {
-        background-image: url('../../images/farm_bg.jpg');
+        background-image: url('./../images/farm_bg.jpg');
         background-size: 110% 140%;
 
         @media screen and (orientation: landscape) {
-            background-image: url('../../images/farm_bg_rotate.jpg');
+            background-image: url('./../images/farm_bg_rotate.jpg');
             background-size: 110% 110%;
         }
     }
 
     &--wing {
-        background-image: url('../../images/birds_bg.jpg');
+        background-image: url('./../images/birds_bg.jpg');
         background-size: 140% 130%;
 
         @media screen and (orientation: landscape) {
-            background-image: url('../../images/birds_bg_rotate.jpg');
+            background-image: url('./../images/birds_bg_rotate.jpg');
             background-size: 120% 130%;
         }
     }

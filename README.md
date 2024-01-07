@@ -40,7 +40,7 @@ The exact requirements:
 ### Links
 
 - Challenge URL: [Challenge URL](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine)
-- Live Site URL: [Live site URL]()
+- Live Site URL: [Live site URL](https://leo-code-ca.github.io/drum_machine/)
 
 ## My process
 
