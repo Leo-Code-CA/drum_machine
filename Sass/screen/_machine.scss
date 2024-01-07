@@ -4,6 +4,8 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 
+    // BACKGROUND IMAGE - DRUM MACHINE SCREEN
+
     &--wild {
         background-image: url('../../images/wild_bg.png');
         background-size: 130% 130%;
@@ -34,6 +36,8 @@
         }
     }
 
+    // DRUM PADS AND CONTROLS CONTAINER - DRUM MACHINE SCREEN
+
     &__container {
 
         @include custom.media-breakpoint-up(md) {
@@ -41,9 +45,15 @@
         }
 
         @media screen and (orientation: landscape) {
+            width: 90%;
+        }
+
+        @include custom.media-breakpoint-up(lg) {
             width: 80%;
         }
     }
+
+    // HEADINGS - DRUM MACHINE SCREEN
 
     &__subheading {
 
@@ -58,7 +68,6 @@
         @include custom.media-breakpoint-up(md) {
             font-size: 4.5rem;
         }
-
 
         &--wild {
             font-family: custom.$wildFont;
@@ -92,7 +101,11 @@
 
     }
 
+    // MACHINE CONTROLS - DRUM MACHINE SCREEN
+
     &__controls {
+
+        font-size: 1rem;
 
         @include custom.media-breakpoint-up(md) {
             height: 2rem;
@@ -106,29 +119,21 @@
             height: 2.5rem;
         }
 
-
         &--wild {
-            background-color: #FFEEC2;
+            background-color: custom.$light-yellow;
         }
 
         &--farm {
-            background-color: #C7CA44;
+            background-color: custom.$light-green;
         }
 
         &--wing {
-            background-color: #FFCCC2;
+            background-color: custom.$light-pink;
         }
 
         &--hover {
             border: 1px solid black !important;
             width: 30%;
-            // text-align: left;
-            // display: flex;
-            // justify-content: center;
-            // gap: 10%;
-            // align-items: center;
-            // flex-wrap: nowrap;
-
 
             @include custom.media-breakpoint-up(md) {
                 width: 15%;
@@ -146,24 +151,6 @@
             background-color: red;
             display: inline-block;
             border-radius: 50%;
-        }
-
-        button:nth-child(4) span {
-            border-left: 0.6rem solid black;
-            border-top: 0.4rem solid transparent;
-            border-bottom: 0.4rem solid transparent;
-            display: inline-block;
-        }
-
-        button:nth-child(5) span {
-            width: 0.2rem;
-            height: 0.7rem;
-            background-color: black;
-            display: inline-block;
-        }
-
-        button:nth-child(5) span:nth-child(1) {
-            margin-right: -0.2rem;
         }
 
         button:nth-child(2) span {
@@ -197,8 +184,27 @@
             background-color: black;
             transform: rotate(-45deg);
         }
-    
+
+        button:nth-child(4) span {
+            border-left: 0.6rem solid black;
+            border-top: 0.4rem solid transparent;
+            border-bottom: 0.4rem solid transparent;
+            display: inline-block;
+        }
+
+        button:nth-child(5) span {
+            width: 0.2rem;
+            height: 0.7rem;
+            background-color: black;
+            display: inline-block;
+        }
+
+        button:nth-child(5) span:nth-child(1) {
+            margin-right: -0.2rem;
+        }
     }
+
+    // CURRENTLY PLAYED SOUND DISPLAY - DRUM MACHINE SCREEN
 
     &__display {
         border-radius: 50%;
@@ -214,26 +220,40 @@
         }
 
         &--wild {
-            border-color: #FFEEC2;
+            border-color: custom.$light-yellow;
         }
         
         &--farm {
-            border-color: #C7CA44;
+            border-color: custom.$light-green;
         }
         
         &--wing {
-            border-color: #FFCCC2;
-        }
-
-    }
-
-    &__sounds-list li {
-        width: 45%;
-
-        @include custom.media-breakpoint-up(lg) {
-            width: 32%;
+            border-color: custom.$light-pink;
         }
     }
+
+    // RECORDED SOUNDS LIST - DRUM MACHINE SCREEN
+
+    &__sounds-list {
+
+        font-size: 0.8rem;
+        padding-left: 1.5rem;
+
+        @include custom.media-breakpoint-up(sm) {
+            font-size: initial;
+            padding: auto;
+        }
+
+        li {
+            width: 45%;
+
+            @include custom.media-breakpoint-up(lg) {
+                width: 32%;
+            }
+        }
+    }
+
+    // PADS AND PANEL DIMENSIONS AND BORDER - DRUM MACHINE SCREEN
 
     &__pads, &__panel {
         border: 1px solid rgba(black, 0.6);
@@ -245,6 +265,7 @@
         }
     }
 
+    // BACK HOME BUTTON - DRUM MACHINE SCREEN
 
     &__home {
         width: 3rem;
@@ -272,6 +293,8 @@
         }
     }
 
+    // DRUM PADS CONTAINER AND ROW CONTAINER - DRUM MACHINE SCREEN
+
     &__pads-box {
         flex-direction: column;
         max-height: 75%;
@@ -290,8 +313,9 @@
 
 }
 
-.drum-pad {
+// INDIVIDUAL DRUM PAD - DRUM MACHINE SCREEN
 
+.drum-pad {
     border: none;
     border-radius: 11px 15px 9px 17px;
     color: white;

@@ -1,14 +1,14 @@
-export function handleTheme(theme) {
-
-    $('.welcome__theme').removeClass('d-none');
-    $('.welcome__theme').html(`You picked <span>${theme}</span>`);
+export function welcomeTheme(theme) {
 
     const bgImg = $('#welcomeimg');
     const bgColor = $('#welcomecolor');
-    const btnChoice = $('#choicebtn button');
+    const btnChoice = $('.welcome__choiceBtn');
     const btnConfirm = $('#confirmbtn');
     const p = $('#welcomep');
     const title = $('#welcometheme');
+
+    $('.welcome__theme').removeClass('d-none');
+    $('.welcome__theme').html(`You picked <span>${theme}</span>`);
 
     const elements = [bgImg, bgColor, btnChoice, btnConfirm, p, title];
 
@@ -20,11 +20,9 @@ export function handleTheme(theme) {
             let remove = "";
 
             classes.filter(function(name) {
-                // console.log(name.includes('--'));
                 name.includes('--') && (remove += ` ${name}`);
             })
 
-            // console.log(remove)
             return remove;
         })
 
@@ -47,8 +45,6 @@ export function handleTheme(theme) {
             case 5:
             element.addClass(`welcome__theme--${theme}`);
             break;
-            default:
-            element.addClass(`welcome__default`);
         }
     })
 }
@@ -72,11 +68,9 @@ export function machineTheme(theme) {
                 let remove = "";
     
                 classes.filter(function(name) {
-                    // console.log(name.includes('--'));
                     name.includes('--') && (remove += ` ${name}`);
                 })
-    
-                // console.log(remove)
+
                 return remove;
             })
 
@@ -102,9 +96,6 @@ export function machineTheme(theme) {
             break;
         }
 
-        
-
     })
-
 
 }

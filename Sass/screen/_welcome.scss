@@ -1,229 +1,231 @@
 @use '../custom';
 
-// BACKGROUND IMAGE - WELCOME SCREEN
+.welcome {
 
-.welcome__bgImg {
-    background: url('../images/music_bg.jpg'), custom.$welcomeWhiteOverlay;
-    background-size: 160%;
-    background-position: 50% 110%;
-    background-repeat: no-repeat;
+    // BACKGROUND IMAGE - WELCOME SCREEN
 
-    @include custom.media-breakpoint-up(sm) {
-        background-position: 50% 65%;
-        background-size: cover;
-        background-blend-mode: overlay;
+    &__bgImg {
+        background: url('../images/music_bg.jpg'), custom.$welcomeWhiteOverlay;
+        background-size: 160%;
+        background-position: 50% 110%;
+        background-repeat: no-repeat;
+
+        @include custom.media-breakpoint-up(sm) {
+            background-position: 50% 65%;
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+
+        @include custom.media-breakpoint-up(lg) {
+            background-size: 130%;
+        }
+
+        @include custom.media-breakpoint-up(xl) {
+            background-size: 100%;
+        }
+
+        &--wild {
+            background-image: url('../../images/wild.svg');
+            background-size: cover;
+            background-position: 30% 60%;
+            background-blend-mode: initial;
+
+            @include custom.media-breakpoint-up(md) {
+                background-position: 40% 60%;
+            }
+        }
+
+        &--farm {
+            background-image: url('../../images/farm.svg');
+            background-size: cover;
+            background-position: 50% 27%;
+            background-blend-mode: initial;
+        }
+
+        &--wing {
+            background-image: url('../../images/birds.jpg');
+            background-size: cover;
+            background-blend-mode: initial;
+        }
     }
 
-    @include custom.media-breakpoint-up(lg) {
-        background-size: 130%;
+    // ROUND COLORED BACKGROUND - WELCOME SCREEN
+
+    &__bgColor {
+        width: min(100%, 23rem);
+        aspect-ratio: 1.1/1;
+        border-radius: 100%;
+        background-color: custom.$welcomeOrange;
+        position: relative;
+
+        &--wild {
+            background-color: custom.$lightGreen;
+            background: linear-gradient(
+                0deg,
+                custom.$darkGreen,
+                custom.$mediumGreen 25%,
+                custom.$lightGreen 75%
+            );
+        }
+
+        &--farm {
+            background-color: custom.$lightOrange;
+            background: linear-gradient(
+                30deg,
+                custom.$darkOrange,
+                custom.$meidumOrange 25%,
+                custom.$lightOrange 75%
+            );
+        }
+
+        &--wing {
+            background-color: custom.$lightBlue;
+            background: linear-gradient(
+                180deg,
+                custom.$darkBlue,
+                custom.$mediumBlue,
+                custom.$lightBlue
+            );
+        }
     }
 
-    @include custom.media-breakpoint-up(xl) {
-        background-size: 100%;
+    // ROUNDED HEADING - WELCOME SCREEN
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        width: 100%;
+        position: absolute;
+        top: -10%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        fill: black;
     }
 
-    &--wild {
-        background-image: url('../../images/wild.svg');
-        background-size: cover;
-        background-position: 30% 60%;
-        background-blend-mode: initial;
+    // THEME TITLE - WELCOME SCREEN
+
+    &__theme {
+
+        &--wild span {
+            font-family: custom.$wildFont;
+            font-size: 2.2rem;
+            vertical-align: middle;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        &--farm span {
+            font-family: custom.$farmFont;
+            font-size: 3rem;
+            text-transform: capitalize;
+            vertical-align: middle;
+        }
+
+        &--wing span {
+            font-family: custom.$wingFont;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: capitalize;
+            vertical-align: middle;
+        }
+    }
+
+    // PARAGRAPH - WELCOME SCREEN
+
+    &__paragraph {
+
+        font-size: 1rem;
 
         @include custom.media-breakpoint-up(md) {
-            background-position: 40% 60%;
+            font-size: 1.2rem;
+        }
+
+        &--wild {
+            font-size: 1rem;
+        }
+
+        &--farm {
+            font-size: 1rem;
+        }
+
+        &--wing {
+            font-size: 1rem;
+            color: white;
         }
     }
 
-    &--farm {
-        background-image: url('../../images/farm2.svg');
-        background-size: cover;
-        background-position: 50% 27%;
-        background-blend-mode: initial;
+    // THEME CHOICE BUTTONS - WELCOME SCREEN
+
+    &__choiceBtn {
+        background-color: transparent;
+
+        // FARM
+        &:nth-child(1):hover {
+            background-color: custom.$lightOrange--hover;
+            color: black;
+        }
+
+        &--farm {
+            background-color: custom.$orange--btn;
+        }
+
+        // WILD
+        &:nth-child(2):hover {
+            background-color: custom.$lightGreen--hover;
+            color: black;
+        }
+
+        &--wild {
+            background-color: custom.$green--btn;
+            color: white;
+        }
+
+        // WING
+        &:nth-child(3):hover {
+            background-color: custom.$lightBlue--hover;
+            color: black;
+        }
+
+        &--wing {
+            background-color: custom.$blue--btn;
+            color: white;
+        }
     }
 
-    &--wing {
-        background-image: url('../../images/birds.jpg');
-        background-size: cover;
-        background-blend-mode: initial;
-    }
-}
+    // THEME CONFIRM BUTTON - WELCOME SCREEN
 
-// ROUND COLORED BACKGROUND - WELCOME SCREEN
-
-.welcome__bgColor {
-    width: min(100%, 23rem);
-    aspect-ratio: 1.1/1;
-    border-radius: 100%;
-    background-color: custom.$welcomeOrange;
-    position: relative;
-
-    &--wild {
-        background-color: custom.$lightGreen;
-        background: linear-gradient(
-            0deg,
-            custom.$darkGreen,
-            custom.$mediumGreen 25%,
-            custom.$lightGreen 75%
-        );
-    }
-
-    &--farm {
-        background-color: custom.$lightOrange;
-        background: linear-gradient(
-            30deg,
-            custom.$darkOrange,
-            custom.$meidumOrange 25%,
-            custom.$lightOrange 75%
-        );
-    }
-
-    &--wing {
-        background-color: custom.$lightBlue;
-        background: linear-gradient(
-            180deg,
-            custom.$darkBlue,
-            custom.$mediumBlue,
-            custom.$lightBlue
-        );
-    }
-}
-
-// ROUNDED TITLE - WELCOME SCREEN
-
-.welcome__title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    width: 100%;
-    position: absolute;
-    top: -10%;
-    left: 50%;
-    transform: translate(-50%, -10%);
-    fill: black;
-}
-
-// THEME TITLE - WELCOME SCREEN
-
-.welcome__theme {
-
-    &--wild span {
-        font-family: custom.$wildFont;
-        font-size: 2.2rem;
-        vertical-align: middle;
-        font-weight: bold;
-        text-transform: capitalize;
-    }
-
-    &--farm span {
-        font-family: custom.$farmFont;
-        font-size: 3rem;
-        text-transform: capitalize;
-        vertical-align: middle;
-    }
-
-    &--wing span {
-        font-family: custom.$wingFont;
-        font-size: 3rem;
-        font-weight: bold;
-        text-transform: capitalize;
-        vertical-align: middle;
-    }
-}
-
-// PARAGRAPH - WELCOME SCREEN
-
-.welcome__paragraph {
-
-    font-size: 1rem;
-
-    @include custom.media-breakpoint-up(md) {
-        font-size: 1.2rem;
-    }
-
-    &--wild {
-        font-size: 1rem;
-    }
-
-    &--farm {
-        font-size: 1rem;
-
-    }
-
-    &--wing {
-        font-size: 1rem;
+    &__confirmBtn {
+        background-color: custom.$welcomeDarkGreen;
         color: white;
-
-    }
-}
-
-// THEME CHOICE BUTTONS - WELCOME SCREEN
-
-.welcome__choiceBtn {
-    background-color: transparent;
-
-    // FARM
-    &:nth-child(1):hover {
-        background-color: custom.$lightOrange--hover;
-        color: black;
-    }
-
-    &--farm {
-        background-color: custom.$orange--btn;
-    }
-
-    // WILD
-    &:nth-child(2):hover {
-        background-color: custom.$lightGreen--hover;
-        color: black;
-    }
-
-    &--wild {
-        background-color: custom.$green--btn;
-        color: white;
-    }
-
-    // WING
-    &:nth-child(3):hover {
-        background-color: custom.$lightBlue--hover;
-        color: black;
-    }
-
-    &--wing {
-        background-color: custom.$blue--btn;
-        color: white;
-    }
-}
-
-// THEME CONFIRM BUTTON - WELCOME SCREEN
-
-.welcome__confirmBtn {
-    background-color: custom.$welcomeDarkGreen;
-    color: white;
-
-    &:hover {
-        background-color: custom.$welcomeDarkGreen--hover;
-        color: white;
-    }
-
-    &--wild {
-        background-color: custom.$orange;
 
         &:hover {
-            background-color: custom.$orange--hover;
+            background-color: custom.$welcomeDarkGreen--hover;
+            color: white;
+        }
+
+        &--wild {
+            background-color: custom.$orange;
+
+            &:hover {
+                background-color: custom.$orange--hover;
+            }
+        }
+
+        &--farm {
+            background-color: custom.$brown;
+
+            &:hover {
+                background-color: custom.$brown--hover;
+            }
+        }
+
+        &--wing {
+            background-color: custom.$pink;
+
+            &:hover {
+                background-color: custom.$pink--hover;
+            }
         }
     }
 
-    &--farm {
-        background-color: custom.$brown;
-
-        &:hover {
-            background-color: custom.$brown--hover;
-        }
-    }
-
-    &--wing {
-        background-color: custom.$pink;
-
-        &:hover {
-            background-color: custom.$pink--hover;
-        }
-    }
 }

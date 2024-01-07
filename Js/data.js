@@ -1,3 +1,5 @@
+// DATA ABOUT THE THREE DIFFERENT THEMES
+
 export const farm = [
     {id: 0, animal: 'Rooster', audio: 'audios/farm/Rooster.m4a', key: 'q'},
     {id: 1, animal: 'Donkey', audio: 'audios/farm/Donkey.m4a', key: 'w'},

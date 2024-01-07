@@ -19,17 +19,25 @@
 
         <!-- WELCOME PAGE -->
         <div class="container-fluid welcome">
+
             <div class="row vh-100 welcome__bgImg" id="welcomeimg">
+
                 <div class="col-12 d-flex flex-column align-items-center mt-5 mt-lg-0 justify-content-lg-center">
+
                     <div id="welcomecolor" class="welcome__bgColor d-flex flex-column justify-content-evenly align-items-center z-1 p-3 mt-3 mt-lg-0">
+
                         <p id="welcomep" class="w-50 text-center welcome__paragraph mb-0">Hi there! Pick your favorite please. Don't worry, you'll able to change later on.</p>
+
                         <h3 class="welcome__theme d-none" id="welcometheme"></h3>
+
                         <div id="choicebtn">
                             <button type="button" class="btn btn-outline-dark welcome__choiceBtn" id="farm">Farm</button>
                             <button type="button" class="btn btn-outline-dark welcome__choiceBtn" id="wild">Wild</button>
                             <button type="button" class="btn btn-outline-dark welcome__choiceBtn" id="wing">Wing</button>
                         </div>
+
                         <button type="button" class="btn welcome__confirmBtn" id="confirmbtn">Confirm</button>
+
                         <svg class="welcome__title z-n1" viewBox="50 -10 400 400">
                             <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" fill="transparent"/>
                             <text>
@@ -38,20 +46,22 @@
                                 </textPath>
                             </text>
                         </svg>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
 
-
         <!-- DRUM MACHINE -->
-
         <div class="container-fluid d-none machine" id="drum-machine">
 
             <div class="machine__container row vh-100 px-4 py-5 flex-column flex-nowrap justify-content-center mx-auto">
 
                 <button class="position-absolute machine__home rounded">
-                    <img src="images/home.svg" alt="" class="h-100 w-100 d-block">
+                    <img src="images/home.svg" alt="home logo" class="h-100 w-100 d-block">
                 </button>
 
                 <h1 class="display-2 text-center machine__title">
@@ -60,17 +70,15 @@
                     Machine
                 </h1>
 
-                <!-- DRUM MACHINE -->
                 <div class="col-12 d-flex gap-2 machine__pads-box">
 
-                    <!-- 9 DRUM PADS -->
+                    <!-- DRUM PADS -->
                     <div class="d-flex flex-column gap-2 gap-md-4 p-2 rounded machine__pads justify-content-evenly">
 
                         <h2 class="text-center mb-0 machine__subheading">Play</h2>
 
                         <div id="display" class="text-center machine__display d-none p-md-1 p-lg-2"></div>
                         
-
                         <div class="col-12 d-flex justify-content-evenly flex-fill machine__pads-row">
                             <button type="button" id="0" class="drum-pad col-3 text-center">Q
                                 <audio src="" class="clip" id="Q"></audio>
@@ -113,28 +121,35 @@
                     <div class="d-flex flex-column gap-2 rounded p-2 machine__panel flex-fill overflow-y-auto">
                     
                         <h2 class="text-center mb-0 machine__subheading">Record</h2>
+
                         <div class="d-flex justify-content-center machine__controls rounded-pill flex-shrink-0">
-                            <button type="button" id="rec" class="rounded-pill flex-fill">
+
+                            <button type="button" id="rec" class="rounded-pill flex-fill" title="Start recording">
                                 Rec
-                                <span class="d-none ms-2"></span>
-                            </button>
-                            <button type="button" id="stop" class="rounded-pill flex-fill">
-                                Stop
-                                <span class="d-none ms-2"></span>
-                            </button>
-                            <button type="button" id="del" class="rounded-pill flex-fill">
-                                Del
-                                <span class="d-none ms-2 align-middle"></span>
-                            </button>
-                            <button type="button" id="play" class="rounded-pill flex-fill">
-                                Play
-                                <span class="d-none ms-2"></span>
-                            </button>
-                            <button type="button" id="pause" class="rounded-pill flex-fill">
-                                Pause
-                                <span class="d-none ms-2"></span>
                                 <span class="d-none ms-1"></span>
                             </button>
+
+                            <button type="button" id="stop" class="rounded-pill flex-fill" title="Stop and save the record">
+                                Stop
+                                <span class="d-none ms-1"></span>
+                            </button>
+
+                            <button type="button" id="del" class="rounded-pill flex-fill" title="Delete record">
+                                Del
+                                <span class="d-none ms-1 align-middle"></span>
+                            </button>
+
+                            <button type="button" id="play" class="rounded-pill flex-fill" title="Play the saved record">
+                                Play
+                                <span class="d-none ms-1"></span>
+                            </button>
+
+                            <button type="button" id="pause" class="rounded-pill flex-fill" title="Pause the saved record">
+                                Pause
+                                <span class="d-none ms-1"></span>
+                                <span class="d-none"></span>
+                            </button>
+
                         </div>
                     
                         <ol id="list" class="overflow-y-auto machine__sounds-list d-flex flex-wrap align-content-start align-items-start mb-0 column-gap-2"></ol>
@@ -144,10 +159,11 @@
                 </div>
 
             </div>
-        </div>
 
+        </div>
         
         <script src="Js/index.js" type="module"></script>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
         
     </body>
     
